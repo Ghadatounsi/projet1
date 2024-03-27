@@ -1,19 +1,13 @@
-body{
-    width: 100%;
-    background-color: #468499;
-}
-div.div1{
-    background-color: gray;
-}
-
-div.div1{}
-div.div2{}
-div.div3{}
-div.div4{}
-div.div6{}
-div.div7{}
-div.div8{}
-div.div9{}
-div.div10{}
-div.div11{}
-div.div12{}
+.bg-image-vertical {
+    position: relative;
+    overflow: hidden;
+    background-repeat: no-repeat;
+    background-position: right center;
+    background-size: auto 100%;
+    }
+    
+    @media (min-width: 1025px) {
+    .h-custom-2 {
+    height: 100%;
+    }
+    }
