@@ -61,15 +61,15 @@
               <button type="button" data-bs-target="#demo" data-bs-slide-to="2"></button>
             </div>
             <!-- The slideshow/carousel -->
-            <div class="carousel-inner">
+            <div class="carousel-inner" style="padding-bottom: 5%;">
               <div class="carousel-item active">
-                <img src="../assets/img/cer.jpg" alt="Los Angeles" class="d-block w-100">
+                <img src="../assets/img/img4.jpg" alt="Los Angeles" class="d-block w-100" width="1800px" height="600px">
               </div>
               <div class="carousel-item">
-                <img src="../assets/img/bien.jpg" alt="Chicago" class="d-block w-100">
+                <img src="../assets/img/img2.jpg" alt="Chicago" class="d-block w-100" width="1800px" height="600px">
               </div>
               <div class="carousel-item">
-                <img src="../assets/img/ok.jpeg" alt="New York" class="d-block w-100">
+                <img src="../assets/img/img1.jpg" alt="New York" class="d-block w-100" width="1800px" height="600px">
               </div>
             </div>
             
@@ -147,7 +147,7 @@
 
       
     <div class="container-fluid mt-3">
-        <h1>nos differents prestations</h1>
+        <h1> - nos differents prestations :</h1>
         <p class="text-bg-secondary">explorez nos differentes prestations conçue pour rependre à vos besoins spésifiques et vous accompagner tout au long de votre parcour d'apprentissage</p>
         
         <div class="row">
@@ -158,8 +158,10 @@
           <div class="col-xl-8 p-3  text-white">
          <div class="card" style="width: 50rem; height: 18rem;">   
                 <div class="card-body">
-                  <h5 class="card-title">cours en ligne interactif et sessions de formation présentiel </h5>
-                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  <h5 class="card-title"> 1-contenu pédaghogique :</h5>
+                  <p class="card-text">* - cours théoriques : Sessions structurées présentant les concepts, les principes et les théories pertinents de manière didactique et interactive. </p>
+                  <p class="card-text">* - Travaux pratiques : Exercices concrets permettant aux participants d'appliquer les connaissances acquises dans des situations réelles ou simulées. </p>
+                  <p class="card-text">* - Supports pédagogiques : Documents écrits, présentations PowerPoint, vidéos, simulations informatiques, et autres ressources utilisées pour faciliter l'apprentissage et la compréhension.</p> 
                 </div>
               </div>
           </div>
@@ -175,20 +177,23 @@
 
 
     <div class="container-fluid mt-3">
-        <h1>nos differents prestations</h1>
-        <p class="text-bg-secondary">explorez nos differentes prestations conçue pour rependre à vos besoins spésifiques et vous accompagner tout au long de votre parcour d'apprentissage</p>
+        <h1></h1>
+        <p class="text-bg-secondary"></p>
         
         <div class="row">
             <div class="col-xl-8 p-3  text-white">
                 <div class="card" style="width: 50rem; height: 18rem;">   
                     <div class="card-body">
-                         <h5 class="card-title">Card title</h5>
-                         <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                         <h5 class="card-title"> 2-Suivi et soutien :</h5>
+                         <p class="card-text"> - Sessions de suivi individuel : Réunions individuelles avec les participants pour discuter de leurs progrès, répondre à leurs questions et leur fournir un feedback personnalisé.</p>
+                         <p class="card-text"> - Accompagnement personnalisé : Assistance continue pour résoudre les difficultés spécifiques rencontrées par les participants et les aider à surmonter les obstacles.</p>
+                         <p class="card-text"> - Réponses aux questions et clarifications : Disponibilité d'un formateur ou d'un tuteur pour répondre aux questions et clarifier les points de confusion tout au long de la formation.</p>
+
                     </div>
                  </div>
             </div>
             <div class="col-xl-4 p-3  text-white">
-                <img src="../assets/img/bien.jpg" class="float-start" alt="Paris" width="304" height="236"> 
+                <img src="../assets/img/hi.jpg" class="float-start" alt="Paris" width="304" height="236"> 
 
             </div>
         </div>
@@ -199,19 +204,21 @@
 
 
     <div class="container-fluid mt-3">
-        <h1>nos differents prestations</h1>
-        <p class="text-bg-secondary">explorez nos differentes prestations conçue pour rependre à vos besoins spésifiques et vous accompagner tout au long de votre parcour d'apprentissage</p>
+        <h1></h1>
+        <p class="text-bg-secondary"></p>
         
         <div class="row">
           <div class="col-xl-4 p-3  text-white">
-            <img src="../assets/img/bien.jpg" class="float-start" alt="Paris" width="304" height="236"> 
+            <img src="../assets/img/hii.jpg" class="float-start" alt="Paris" width="304" height="236"> 
 
           </div>
           <div class="col-xl-8 p-3  text-white">
          <div class="card" style="width: 50rem; height: 18rem;">   
                 <div class="card-body">
-                  <h5 class="card-title">Card title</h5>
-                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  <h5 class="card-title">3-Évaluation et certification :</h5>
+                  <p class="card-text">- régulières : Tests, quiz, devoirs et autres formes d'évaluation périodique pour évaluer la compréhension et les progrès des participants.</p>
+                  <p class="card-text">- Certification à la fin de la formation : Remise d'un certificat ou d'une attestation à ceux qui ont satisfait aux critères d'achèvement de la formation.</p>
+                  <p class="card-text"> - Feedback sur la performance et les progrès : Retours réguliers aux participants sur leurs performances et leurs points forts, ainsi que des conseils pour s'améliorer.</p>
                 </div>
               </div>
           </div>
@@ -222,20 +229,23 @@
 
 
     <div class="container-fluid mt-3">
-        <h1>nos differents prestations</h1>
-        <p class="text-bg-secondary">explorez nos differentes prestations conçue pour rependre à vos besoins spésifiques et vous accompagner tout au long de votre parcour d'apprentissage</p>
+        <h1></h1>
+        <p class="text-bg-secondary"></p>
         
         <div class="row">
             <div class="col-xl-8 p-3  text-white">
                 <div class="card" style="width: 50rem; height: 18rem;">   
                     <div class="card-body">
-                         <h5 class="card-title">Card title</h5>
-                         <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                         <h5 class="card-title"> 4-Soutien post-formation :</h5>
+                         <p class="card-text">- Accès à des ressources en ligne : Documents, vidéos, tutoriels et autres ressources accessibles en ligne pour permettre aux participants de continuer à approfondir leurs connaissances après la formation.</p>
+                         <p class="card-text"> - Forums de discussion : Plateformes en ligne où les participants peuvent poser des questions, partager des expériences et interagir avec d'autres apprenants et des experts du domaine.</p>
+                         <p class="card-text"> - Webinaires ou sessions de mise à jour : Sessions en ligne périodiques pour mettre à jour les connaissances des participants sur les développements récents dans le domaine concerné.</p>
+                         <p class="card-text"> - Assistance continue : Support technique et pédagogique continu pour répondre aux questions et aux préoccupations des participants même après la fin de la formation.</p>
                     </div>
                  </div>
             </div>
             <div class="col-xl-4 p-3  text-white">
-                <img src="../assets/img/bien.jpg" class="float-start" alt="Paris" width="304" height="236"> 
+                <img src="../assets/img/hiii.jpg" class="float-start" alt="Paris" width="304" height="236"> 
 
             </div>
         </div>
@@ -243,12 +253,12 @@
     </div>
 
 
-
-
-
-
-
-
+    <div class="container-fluid mt-3">
+  <h1>Two Unequal Responsive Columns</h1>
+  <p>Resize the browser window to see the effect.</p>
+  <p>The columns will automatically stack on top of each other when the screen is less than 576px wide.</p>
+  <div class="row">
+    <div class="col-xl-6 p-3  ">.
     <div class="container-fluid mt-3">
         <h1>contactez nous</h1>
         <p class="text-bg-secondary">n'ésiter pas à nous contacter pour en savoir pls sur nos services , poser des questions ou debuter votre inscription </p>
@@ -264,6 +274,18 @@
               </div>
           </form>
     </div>
+</div>
+    <div class="col-xl-6 p-3 ">
+    <div>
+    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d798.9211283820349!2d10.9863945!3d36.7781352!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1302cba64e65462f%3A0x493c615438a95c5a!2sInir!5e0!3m2!1sfr!2stn!4v1711625051492!5m2!1sfr!2stn" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+  </div>
+    </div>
+  </div>
+</div>
+
+
+
+
 
 
 
