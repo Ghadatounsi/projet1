@@ -1,10 +1,10 @@
     <!-- Footer -->
-    <footer class="text-center text-lg-start bg-body-tertiary text-muted">
+    <footer class="text-center text-lg-start bg-dark text-white">
     <!-- Section: Social media -->
     <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
       <!-- Left -->
       <div class="me-5 d-none d-lg-block">
-        <span>Get connected with us on social networks:</span>
+        <span>connectez-vous avec nous sur les réseaux sociaux:</span>
       </div>
       <!-- Left -->
   
@@ -42,11 +42,16 @@
           <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
             <!-- Content -->
             <h6 class="text-uppercase fw-bold mb-4">
-              <i class="fas fa-gem me-3"></i>Company name
+              <i class="fas fa-gem me-3"></i>nom de l'entreprise
             </h6>
             <p>
-              Here you can use rows and columns to organize your footer content. Lorem ipsum
-              dolor sit amet, consectetur adipisicing elit.
+             iniracademy
+            </p>
+            <h6 class="text-uppercase fw-bold mb-4">
+              <i class="fas fa-gem me-3"></i>page facebook
+            </h6>
+            <p>
+             Inir MT 
             </p>
           </div>
           <!-- Grid column -->
@@ -58,16 +63,16 @@
               Products
             </h6>
             <p>
-              <a href="#!" class="text-reset">Angular</a>
+              <a href="#!" class="text-reset">langues</a>
             </p>
             <p>
-              <a href="#!" class="text-reset">React</a>
+              <a href="#!" class="text-reset">informatiques</a>
             </p>
             <p>
-              <a href="#!" class="text-reset">Vue</a>
+              <a href="#!" class="text-reset"></a>
             </p>
             <p>
-              <a href="#!" class="text-reset">Laravel</a>
+              <a href="#!" class="text-reset"></a>
             </p>
           </div>
           <!-- Grid column -->
@@ -79,16 +84,16 @@
               Useful links
             </h6>
             <p>
-              <a href="#!" class="text-reset">Pricing</a>
+              <a href="#!" class="text-reset">prix</a>
             </p>
             <p>
-              <a href="#!" class="text-reset">Settings</a>
+              <a href="#!" class="text-reset">paramétres</a>
             </p>
             <p>
               <a href="#!" class="text-reset">Orders</a>
             </p>
             <p>
-              <a href="#!" class="text-reset">Help</a>
+              <a href="#!" class="text-reset">aide</a>
             </p>
           </div>
           <!-- Grid column -->
@@ -97,13 +102,13 @@
           <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
             <!-- Links -->
             <h6 class="text-uppercase fw-bold mb-4">Contact</h6>
-            <p><i class="fas fa-home me-3"></i> New York, NY 10012, US</p>
+            <p><i class="fas fa-home me-3"></i> menzel temim, nabeul, 8080</p>
             <p>
               <i class="fas fa-envelope me-3"></i>
-              info@example.com
+              academyinir@gmail.com
             </p>
-            <p><i class="fas fa-phone me-3"></i> + 01 234 567 88</p>
-            <p><i class="fas fa-print me-3"></i> + 01 234 567 89</p>
+            <p><i class="fas fa-phone me-3"></i> +216 56 774 986</p>
+            <p><i class="fas fa-print me-3"></i> +216 31 114 752</p>
           </div>
           <!-- Grid column -->
         </div>
@@ -114,7 +119,7 @@
   
     <!-- Copyright -->
     <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
-      © 2021 Copyright:
+      © 2024 Copyright:
       <a class="text-reset fw-bold" href="https://mdbootstrap.com/">MDBootstrap.com</a>
     </div>
     <!-- Copyright -->

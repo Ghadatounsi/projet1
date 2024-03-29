@@ -7,12 +7,18 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<style>
+        .navbar {
+          --bs-navbar-color: rgb(255 255 255) !important;
+          --bs-navbar-hover-color: #FFC107 !important;
+        }
+    </style>
 </head>
 <body>
 <!--Div1-->
     <header>
         <!-- Navbar -->
-        <nav class="navbar navbar-expand-lg bg-body">
+        <nav class="navbar navbar-expand-lg bg-dark ">
           <div class="container-fluid">
             <button
               data-mdb-collapse-init
@@ -158,10 +164,10 @@
           <div class="col-xl-8 p-3  text-white">
          <div class="card" style="width: 50rem; height: 18rem;">   
                 <div class="card-body">
-                  <h5 class="card-title"> 1-contenu pédaghogique :</h5>
-                  <p class="card-text">* - cours théoriques : Sessions structurées présentant les concepts, les principes et les théories pertinents de manière didactique et interactive. </p>
-                  <p class="card-text">* - Travaux pratiques : Exercices concrets permettant aux participants d'appliquer les connaissances acquises dans des situations réelles ou simulées. </p>
-                  <p class="card-text">* - Supports pédagogiques : Documents écrits, présentations PowerPoint, vidéos, simulations informatiques, et autres ressources utilisées pour faciliter l'apprentissage et la compréhension.</p> 
+                  <h5 class="card-title"> 1-i :</h5>
+                  <p class="card-text">- découvrir comment </p>
+                  <p class="card-text">-  - Cours théoriques : Sessions structurées présentant les concepts, les principes et les théories pertinents de manière didactique et interactive </p>
+                  <p class="card-text">- .</p> 
                 </div>
               </div>
           </div>
@@ -185,9 +191,9 @@
                 <div class="card" style="width: 50rem; height: 18rem;">   
                     <div class="card-body">
                          <h5 class="card-title"> 2-Suivi et soutien :</h5>
-                         <p class="card-text"> - Sessions de suivi individuel : Réunions individuelles avec les participants pour discuter de leurs progrès, répondre à leurs questions et leur fournir un feedback personnalisé.</p>
-                         <p class="card-text"> - Accompagnement personnalisé : Assistance continue pour résoudre les difficultés spécifiques rencontrées par les participants et les aider à surmonter les obstacles.</p>
-                         <p class="card-text"> - Réponses aux questions et clarifications : Disponibilité d'un formateur ou d'un tuteur pour répondre aux questions et clarifier les points de confusion tout au long de la formation.</p>
+                         <p class="card-text"> -  Réponses aux questions et clarifications : Disponibilité d'un formateur ou d'un tuteur pour répondre aux questions et clarifier les points de confusion tout au long de la formation. Réponses aux questions et clarifications : Disponibilité d'un formateur ou d'un tuteur pour répondre aux questions et clarifier les points de confusion tout au long de la formation.</p>
+                         <p class="card-text"> - .</p>
+                         <p class="card-text"> - </p>
 
                     </div>
                  </div>
@@ -216,9 +222,9 @@
          <div class="card" style="width: 50rem; height: 18rem;">   
                 <div class="card-body">
                   <h5 class="card-title">3-Évaluation et certification :</h5>
-                  <p class="card-text">- régulières : Tests, quiz, devoirs et autres formes d'évaluation périodique pour évaluer la compréhension et les progrès des participants.</p>
-                  <p class="card-text">- Certification à la fin de la formation : Remise d'un certificat ou d'une attestation à ceux qui ont satisfait aux critères d'achèvement de la formation.</p>
-                  <p class="card-text"> - Feedback sur la performance et les progrès : Retours réguliers aux participants sur leurs performances et leurs points forts, ainsi que des conseils pour s'améliorer.</p>
+                  <p class="card-text">- - Feedback sur la performance et les progrès : Retours réguliers aux participants sur leurs performances et leurs points forts, ainsi que des conseils pour s'améliorer. </p>
+                  <p class="card-text">- </p>
+                  <p class="card-text"> -</p>
                 </div>
               </div>
           </div>
@@ -236,11 +242,9 @@
             <div class="col-xl-8 p-3  text-white">
                 <div class="card" style="width: 50rem; height: 18rem;">   
                     <div class="card-body">
-                         <h5 class="card-title"> 4-Soutien post-formation :</h5>
-                         <p class="card-text">- Accès à des ressources en ligne : Documents, vidéos, tutoriels et autres ressources accessibles en ligne pour permettre aux participants de continuer à approfondir leurs connaissances après la formation.</p>
-                         <p class="card-text"> - Forums de discussion : Plateformes en ligne où les participants peuvent poser des questions, partager des expériences et interagir avec d'autres apprenants et des experts du domaine.</p>
-                         <p class="card-text"> - Webinaires ou sessions de mise à jour : Sessions en ligne périodiques pour mettre à jour les connaissances des participants sur les développements récents dans le domaine concerné.</p>
-                         <p class="card-text"> - Assistance continue : Support technique et pédagogique continu pour répondre aux questions et aux préoccupations des participants même après la fin de la formation.</p>
+                         <h5 class="card-title"> témoignages :</h5>
+                         <p class="card-text">Plongez dans l'expérience de nos anciens élèves qui ont bénéficié de notre approche pédagogique immersive et pragmatique. Nos formations sont axées sur des ateliers pratiques et des études de cas pour une expérience d'apprentissage enrichissante-</p>
+                        
                     </div>
                  </div>
             </div>
@@ -254,26 +258,46 @@
 
 
     <div class="container-fluid mt-3">
-  <h1>Two Unequal Responsive Columns</h1>
-  <p>Resize the browser window to see the effect.</p>
-  <p>The columns will automatically stack on top of each other when the screen is less than 576px wide.</p>
+  <h1></h1>
+  <p></p>
   <div class="row">
     <div class="col-xl-6 p-3  ">.
-    <div class="container-fluid mt-3">
-        <h1>contactez nous</h1>
-        <p class="text-bg-secondary">n'ésiter pas à nous contacter pour en savoir pls sur nos services , poser des questions ou debuter votre inscription </p>
-        <p class="text-bg-secondary"> "nous sommes la pour vous aider à atteindre vos objectifs d'apprentissage"</p>
-        <form action="/action_page.php">
-            <div class="mb-3">
-                <label for="exampleFormControlInput1" class="form-label">Email address</label>
-                <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
-              </div>
-              <div class="mb-3">
-                <label for="exampleFormControlTextarea1" class="form-label">Example textarea</label>
-                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-              </div>
-          </form>
-    </div>
+    <form style="width: 26rem;">
+  <!-- Name input -->
+  <div data-mdb-input-init class="form-outline mb-4">
+    <input type="text" id="form4Example1" class="form-control" />
+    <label class="form-label" for="form4Example1">Name</label>
+  </div>
+
+  <!-- Email input -->
+  <div data-mdb-input-init class="form-outline mb-4">
+    <input type="email" id="form4Example2" class="form-control" />
+    <label class="form-label" for="form4Example2">Email address</label>
+  </div>
+
+  <!-- Message input -->
+  <div data-mdb-input-init class="form-outline mb-4">
+    <textarea class="form-control" id="form4Example3" rows="4"></textarea>
+    <label class="form-label" for="form4Example3">Message</label>
+  </div>
+
+  <!-- Checkbox -->
+  <div class="form-check d-flex justify-content-center mb-4">
+    <input
+      class="form-check-input me-2"
+      type="checkbox"
+      value=""
+      id="form4Example4"
+      checked
+    />
+    <label class="form-check-label" for="form4Example4">
+      Send me a copy of this message
+    </label>
+  </div>
+
+  <!-- Submit button -->
+  <button data-mdb-ripple-init type="button" class="btn btn-primary btn-block mb-4">Send</button>
+</form>
 </div>
     <div class="col-xl-6 p-3 ">
     <div>
@@ -291,6 +315,11 @@
 
     <?php include("../includes/footer.php") ?>
 
+
+
+   <!-- Scripts -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="../assets/style.js"></script>
 
 </body>
 </html>
