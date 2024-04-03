@@ -18,17 +18,44 @@
 
 <?php include("../includes/header.php") ?>
 
-<div class="container-fluid mt-3">
-  <h1>Responsive Columns</h1>
-  <p>Resize the browser window to see the effect.</p>
-  <p>The columns will automatically stack on top of each other when the screen is less than 576px wide.</p>
-  <div class="row">
-    <div class="col-sm-3 p-3 bg-primary text-white">.col</div>
-    <div class="col-sm-3 p-3 bg-dark text-white">.col</div>
-    <div class="col-sm-3 p-3 bg-primary text-white">.col</div>
-    <div class="col-sm-3 p-3 bg-dark text-white">.col</div>
-  </div>
+
+
+<video controls>
+  <source src="myVideo.mp4" type="video/mp4" />
+  <source src="myVideo.webm" type="video/webm" />
+  Your browser does not support HTML5 video. Here is a <a href="myVideo.mp4">link to download the video</a>.
+</video>
+<div class="avis">
+    <div class="avis-item">
+        <div class="avatar">
+            <img src="avatar1.jpg" alt="Avatar 1">
+        </div>
+        <div class="avis-content">
+            <h3>Nom de l'utilisateur 1</h3>
+            <p>"Texte de l'avis sur la formation. Lorem ipsum dolor sit amet, consectetur adipiscing elit."</p>
+        </div>
+    </div>
+
+    <div class="avis-item">
+        <div class="avatar">
+            <img src="avatar2.jpg" alt="Avatar 2">
+        </div>
+        <div class="avis-content">
+            <h3>Nom de l'utilisateur 2</h3>
+            <p>"Un autre avis sur la formation. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."</p>
+        </div>
+    </div>
+
+    <!-- Ajoutez autant d'avis que nécessaire en suivant la même structure -->
 </div>
+
+
+
+    <!-- Ajoutez d'autres avis en suivant la même structure -->
+</div>
+
+
+
        
     
         <?php include("../includes/footer.php") ?>
