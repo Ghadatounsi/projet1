@@ -2,15 +2,33 @@
 <html>
 <head>
     <title>Projet 1</title>
-    <link rel="stylesheet" href="assets/style.css"></head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<style>
+        .navbar {
+          --bs-navbar-color: rgb(255 255 255) !important;
+          --bs-navbar-hover-color: #FFC107 !important;
+        }
+    </style>
 <body>
-<p>Welcome to Projet 1</p>
-<a href="src/acceuil.php">Acceuil</a>
-<a href="src/utilisateur.php">utilisateur</a>
-<a href="src/module.php">modue</a>
-<a href="src/formation.php">formation</a>
-<a href="src/formateur.php">formateur</a>
-<a href="src/avis.php">avis</a>
-<a href="src/actualite.php">actuaite</a>
+<div class="spinner-grow" style="width: 3rem; height: 3rem;" role="status">
+  <span class="visually-hidden">Loading...</span>
+</div>
+<?php
+// Redirect browser
+header("Location: http://localhost/projet1/src/acceuil.php");
+// Make sure that code execution stops after the redirect
+exit;
+?>
+
+
+
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="../assets/style.js"></script>
 </body>
 </html>

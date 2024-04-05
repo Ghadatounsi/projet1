@@ -246,13 +246,13 @@
   <div class="row mb-4">
     <div class="col">
       <div data-mdb-input-init class="form-outline">
-      <label class="form-label" for="form6Example1">Titre</label>
+      <label class="form-label" for="form6Example1">Nom</label>
 
         <input type="text" id="form6Example1" class="form-control" />
       </div>
     </div>
     <div class="col">
-    <label class="form-label" for="form6Example2">Discription </label>
+    <label class="form-label" for="form6Example2">Prénom </label>
 
       <div data-mdb-input-init class="form-outline">
         <input type="text" id="form6Example2" class="form-control" />
@@ -262,13 +262,13 @@
 
   <!-- Text input -->
   <div data-mdb-input-init class="form-outline mb-4">
-  <label class="form-label" for="form6Example3">Objectif</label>
+  <label class="form-label" for="form6Example3">specialisation</label>
 
     <input type="text" id="form6Example3" class="form-control" />
   </div>
 
    <!-- Message input -->
-   <label class="form-label" for="form6Example4">Programme </label>
+   <label class="form-label" for="form6Example4">biographe </label>
 
    <div data-mdb-input-init class="form-outline mb-4">
     <textarea class="form-control" id="form6Example4" rows="4"></textarea>
@@ -276,46 +276,23 @@
 
   
 
-  <div class="mb-3">
-      
-      <div class="input-group">
-       <!-- Durée input -->
-
-      <label class="form-label" for="form6Example5">Durée</label>
-      <input type="text" id="form6Example5" class="form-control" style="margin-left:3%" />
-       
-      <!-- Prix  input -->
-      <label for="prixInput" class="form-label">Prix</label>
-      <input type="number" class="form-control" id="prixInput" placeholder="Entrez le prix" style="margin-left:3%">
-      <span class="input-group-text">TND</span>
-
-      <!-- Date input -->
-      <label class="form-label" for="form6Example7">Date</label>
-      <input type="Date" id="form6Example7" class="form-control"  style="margin-left:1%"/>
-      </div>
-    </div>
+ 
 
 
 
   <!-- formateur  input -->
-  <div data-mdb-input-init class="form-outline mb-4">
-  <label class="form-label" for="form6Example8">formateur </label>
+  <select class="form-select" aria-label="Disabled select " disabled>
+    <option selected>Selection de Formation</option>
+    <option value="1">One</option>
+    <option value="2">Two</option>
+    <option value="3">Three</option>
+  </select>
 
-    <input type="text" id="form6Example8" class="form-control" />
-  </div>
-
-
-
+<br><br><br><br>
 
   <!-- Checkbox -->
   <div class="form-check d-flex justify-content-center mb-4">
-    <input
-      class="form-check-input me-2"
-      type="checkbox"
-      value=""
-      id="form6Example8"
-      checked
-    />
+    <input  class="form-check-input me-2" type="checkbox" value="" id="form6Example8"  checked />
     <label class="form-check-label" for="form6Example8"> Create an account? </label>
   </div>
 
