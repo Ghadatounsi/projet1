@@ -56,52 +56,56 @@
                             href="https://datatables.net"></a>.</p>
 
                             <table class="table">
-                                <thead>
-                                    <tr>
-                                        <th scope="col">#</th>
-                                        <th scope="col">id</th>
-                                        <th scope="col">titre</th>
-                                        <th scope="col">discription</th>
-                                        <th scope="col">programme</th>
-                                        <th scope="col">durée</th>
-                                        <th scope="col">prix</th>
-                                        <th scope="col">date</th>
-                                        <th scope="col">formateur</th>
-                                    </tr>
-                                </thead>
-                                <tbody class="table-group-divider table-divider-color">
-                                    <?php
-                                    // Connexion à la base de données
-                                    include("../include/connect.php") ;
+    <thead>
+        <tr>
+            <th scope="col">id</th>
+            <th scope="col">titre</th>
+            <th scope="col">discription</th>
+            <th scope="col">programme</th>
+            <th scope="col">durée</th>
+            <th scope="col">prix</th>
+            <th scope="col">date</th>
+            <th scope="col">Actions</th> <!-- Nouvelle colonne pour les actions -->
+        </tr>
+    </thead>
+    <tbody class="table-group-divider table-divider-color">
+        <?php
+        // Connexion à la base de données
+        include("../include/connect.php");
 
+        // Requête SQL pour sélectionner toutes les lignes de la table 'formation'
+        $sql = "SELECT * FROM formation";
+        $result = $conn->query($sql);
 
-                                    // Requête SQL pour sélectionner toutes les lignes de la table 'formation'
-                                    $sql = "SELECT * FROM formation";
-                                    $result = $conn->query($sql);
+        if ($result->num_rows > 0) {
+            // Output data of each row
+            while ($row = $result->fetch_assoc()) {
+                echo "<tr>";
+                echo "<td>" . $row["id"] . "</td>";
+                echo "<td>" . $row["titre"] . "</td>";
+                echo "<td>" . $row["description"] . "</td>";
+                echo "<td>" . $row["programme"] . "</td>";
+                echo "<td>" . $row["durée"] . "</td>";
+                echo "<td>" . $row["prix"] . "</td>";
+                echo "<td>" . $row["date"] . "</td>";
+                echo "<td>";
+                echo "<form action='../Controller/supprimer_formation.php' method='post'>";
+                echo "<input type='hidden' name='supprimer_formation' value='1'>";
+                echo "<input type='hidden' name='formation_id' value='" . $row['id'] . "'>";
+                echo "<button type='submit' class='btn btn-danger'>Supprimer</button>";
+                echo "</form>";
+                echo "</td>";
+                echo "</tr>";
+            }
+        } else {
+            echo "<tr><td colspan='9'>Aucun résultat trouvé</td></tr>";
+        }
+        // Fermer la connexion à la base de données
+        $conn->close();
+        ?>
+    </tbody>
+</table>
 
-                                    if ($result->num_rows > 0) {
-                                        // Output data of each row
-                                        while ($row = $result->fetch_assoc()) {
-                                            echo "<tr>";
-                                            echo "<th scope='row'>" . $row["id"] . "</th>";
-                                            echo "<td>" . $row["id"] . "</td>";
-                                            echo "<td>" . $row["titre"] . "</td>";
-                                            echo "<td>" . $row["discription"] . "</td>";
-                                            echo "<td>" . $row["programme"] . "</td>";
-                                            echo "<td>" . $row["durée"] . "</td>";
-                                            echo "<td>" . $row["prix"] . "</td>";
-                                            echo "<td>" . $row["date"] . "</td>";
-                                            echo "<td>" . $row["formateur"] . "</td>";
-                                            echo "</tr>";
-                                        }
-                                    } else {
-                                        echo "<tr><td colspan='9'>Aucun résultat trouvé</td></tr>";
-                                    }
-                                    // Fermer la connexion à la base de données
-                                    $conn->close();
-                                    ?>
-                                </tbody>
-                            </table>
                         </div>
                         <!-- /.container-fluid -->
 

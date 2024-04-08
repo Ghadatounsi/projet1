@@ -1,3 +1,11 @@
+<?php
+// Inclure le contrôleur
+require_once '../Controller/ajouter_formation.php';
+
+// Instancier le modèle
+$formationModel = new FormationModel();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -36,164 +44,132 @@
 
             <!-- Main Content -->
             <div id="content">
-            <?php include("../include/header.php") ; ?>
+                <?php include("../include/header.php"); ?>
 
 
                 <!-- Begin Page Content -->
-<form style="padding-left:5%;padding-right:5%">
-  <div class="row mb-4">
-    <div class="col">
-      <div data-mdb-input-init class="form-outline">
-      <label class="form-label" for="form6Example1">Titre</label>
+                <form style="padding-left:5%;padding-right:5%" method="post" action="../Controller/ajouter_formation.php">
+                    <div class="row mb-4">
+                        <div class="col">
+                            <div data-mdb-input-init class="form-outline">
+                                <label class="form-label" for="form6Example1">Titre</label>
+                                <input type="text" name="titre" id="form6Example1" class="form-control" />
+                            </div>
+                        </div>
+                        <div class="col">
+                            <label class="form-label" for="form6Example2">Description </label>
+                            <div data-mdb-input-init class="form-outline">
+                                <input type="text" name="description" id="form6Example2" class="form-control" />
+                            </div>
+                        </div>
+                    </div>
 
-        <input type="text" id="form6Example1" class="form-control" />
-      </div>
-    </div>
-    <div class="col">
-    <label class="form-label" for="form6Example2">Discription </label>
+                    <!-- Text input -->
+                    <div data-mdb-input-init class="form-outline mb-4">
+                        <label class="form-label" for="form6Example3">Objectif</label>
+                        <input type="text" name="objectif" id="form6Example3" class="form-control" />
+                    </div>
 
-      <div data-mdb-input-init class="form-outline">
-        <input type="text" id="form6Example2" class="form-control" />
-      </div>
-    </div>
-  </div>
+                    <!-- Message input -->
+                    <label class="form-label" for="form6Example4">Programme </label>
+                    <div data-mdb-input-init class="form-outline mb-4">
+                        <textarea class="form-control" name="programme" id="form6Example4" rows="4"></textarea>
+                    </div>
 
-  <!-- Text input -->
-  <div data-mdb-input-init class="form-outline mb-4">
-  <label class="form-label" for="form6Example3">Objectif</label>
+                    <div class="mb-3">
+                        <div class="input-group">
+                            <!-- Durée input -->
+                            <label class="form-label" for="form6Example5">Durée</label>
+                            <input type="text" name="duree" id="form6Example5" class="form-control" style="margin-left:3%" />
 
-    <input type="text" id="form6Example3" class="form-control" />
-  </div>
+                            <!-- Prix  input -->
+                            <label for="prixInput" class="form-label">Prix</label>
+                            <input type="number" name="prix" class="form-control" id="prixInput" placeholder="Entrez le prix" style="margin-left:3%">
+                            <span class="input-group-text">TND</span>
 
-   <!-- Message input -->
-   <label class="form-label" for="form6Example4">Programme </label>
+                            <!-- Date input -->
+                            <label class="form-label" for="form6Example7">Date</label>
+                            <input type="date" name="date" id="form6Example7" class="form-control" style="margin-left:1%" min="2022-01-01"/>
 
-   <div data-mdb-input-init class="form-outline mb-4">
-    <textarea class="form-control" id="form6Example4" rows="4"></textarea>
-  </div>
+                          </div>
+                    </div>
 
-  
+                   
+                    <!-- Checkbox -->
+                    <div class="form-check d-flex justify-content-center mb-4">
+                        <input class="form-check-input me-2" type="checkbox" value="" id="form6Example8" checked />
+                        <label class="form-check-label" for="form6Example8"> Create an account? </label>
+                    </div>
 
-  <div class="mb-3">
-      
-      <div class="input-group">
-       <!-- Durée input -->
+                    <!-- Submit button -->
+                    <button data-mdb-ripple-init type="submit" name="ajouter_formation" class="btn btn-primary btn-block mb-4">Place order</button>
+                </form>
 
-      <label class="form-label" for="form6Example5">Durée</label>
-      <input type="text" id="form6Example5" class="form-control" style="margin-left:3%" />
-       
-      <!-- Prix  input -->
-      <label for="prixInput" class="form-label">Prix</label>
-      <input type="number" class="form-control" id="prixInput" placeholder="Entrez le prix" style="margin-left:3%">
-      <span class="input-group-text">TND</span>
+                <div class="container-fluid">
+                    <!-- /.container-fluid -->
+                </div>
+                <!-- End of Main Content -->
 
-      <!-- Date input -->
-      <label class="form-label" for="form6Example7">Date</label>
-      <input type="Date" id="form6Example7" class="form-control"  style="margin-left:1%"/>
-      </div>
-    </div>
-
-
-
-  <!-- formateur  input -->
-  <select class="form-select" aria-label="Disabled select " disabled>
-    <option selected>Selection le formateur</option>
-    <option value="1">One</option>
-    <option value="2">Two</option>
-    <option value="3">Three</option>
-  </select>
-
-
-
-
-  <!-- Checkbox -->
-  <div class="form-check d-flex justify-content-center mb-4">
-    <input
-      class="form-check-input me-2"
-      type="checkbox"
-      value=""
-      id="form6Example8"
-      checked
-    />
-    <label class="form-check-label" for="form6Example8"> Create an account? </label>
-  </div>
-
-  <!-- Submit button -->
-  <button data-mdb-ripple-init type="button" class="btn btn-primary btn-block mb-4">Place order</button>
-</form>                
-
-
-
-
-
-
-
-<div class="container-fluid">
-                <!-- /.container-fluid -->
+                <!-- Footer -->
+                <footer class="sticky-footer bg-white">
+                    <div class="container my-auto">
+                        <div class="copyright text-center my-auto">
+                            <span>Copyright &copy; Your Website 2021</span>
+                        </div>
+                    </div>
+                </footer>
+                <!-- End of Footer -->
 
             </div>
-            <!-- End of Main Content -->
+            <!-- End of Content Wrapper -->
 
-            <!-- Footer -->
-            <footer class="sticky-footer bg-white">
-                <div class="container my-auto">
-                    <div class="copyright text-center my-auto">
-                        <span>Copyright &copy; Your Website 2021</span>
+        </div>
+        <!-- End of Page Wrapper -->
+
+        <!-- Scroll to Top Button-->
+        <a class="scroll-to-top rounded" href="#page-top">
+            <i class="fas fa-angle-up"></i>
+        </a>
+
+        <!-- Logout Modal-->
+        <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+                        <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">×</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+                    <div class="modal-footer">
+                        <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+                        <a class="btn btn-primary" href="login.html">Logout</a>
                     </div>
                 </div>
-            </footer>
-            <!-- End of Footer -->
-
-        </div>
-        <!-- End of Content Wrapper -->
-
-    </div>
-    <!-- End of Page Wrapper -->
-
-    <!-- Scroll to Top Button-->
-    <a class="scroll-to-top rounded" href="#page-top">
-        <i class="fas fa-angle-up"></i>
-    </a>
-
-    <!-- Logout Modal-->
-    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-        aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
-                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">×</span>
-                    </button>
-                </div>
-                <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
-                <div class="modal-footer">
-                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                    <a class="btn btn-primary" href="login.html">Logout</a>
-                </div>
             </div>
         </div>
-    </div>
 
-    <!-- Bootstrap core JavaScript-->
-    <script src="../vendor/jquery/jquery.min.js"></script>
-    <script src="../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+        <!-- Bootstrap core JavaScript-->
+        <script src="../vendor/jquery/jquery.min.js"></script>
+        <script src="../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
-    <!-- Core plugin JavaScript-->
-    <script src="../vendor/jquery-easing/jquery.easing.min.js"></script>
+        <!-- Core plugin JavaScript-->
+        <script src="../vendor/jquery-easing/jquery.easing.min.js"></script>
 
-    <!-- Custom scripts for all pages-->
-    <script src="../js/sb-admin-2.min.js"></script>
+        <!-- Custom scripts for all pages-->
+        <script src="../js/sb-admin-2.min.js"></script>
 
-    <!-- Page level plugins -->
-    <script src="../vendor/chart.js/Chart.min.js"></script>
+        <!-- Page level plugins -->
+        <script src="../vendor/chart.js/Chart.min.js"></script>
 
-    <!-- Page level custom scripts -->
-    <script src="../js/demo/chart-area-demo.js"></script>
-    <script src="../js/demo/chart-pie-demo.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+        <!-- Page level custom scripts -->
+        <script src="../js/demo/chart-area-demo.js"></script>
+        <script src="../js/demo/chart-pie-demo.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
 
-</body>
+    </body>
 
-</html>
+    </html>

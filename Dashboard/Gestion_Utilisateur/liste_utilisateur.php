@@ -56,29 +56,52 @@
                          <a target="_blank"
                             href="https://datatables.net"></a>.</p>
 
-                            <table class="table">
-  <thead>
-    <tr>
-      <th scope="col">#</th>
-      <th scope="col">id</th>
-      <th scope="col">nom</th>
-      <th scope="col">prenom</th>
-      <th scope="col">email</th>
-      <th scope="col">motdepasse</th>
-      <th scope="col">inscription</th>
-      
-      
-    </tr>
-  </thead>
-  <tbody class="table-group-divider table-divider-color">
-    <tr>
-      <th scope="row">1</th>
-      <td></td>
-      
+                            <?php
+                                  include("../include/connect.php") ;
 
-    </tr>
-  </tbody>
+// Requête SQL pour sélectionner toutes les lignes de la table 'utilisateur'
+$sql = "SELECT * FROM utilisateur";
+$result = $conn->query($sql);
+?>
+
+<!-- Affichage des données dans la table HTML -->
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Nom</th>
+            <th scope="col">Prénom</th>
+            <th scope="col">Email</th>
+            <th scope="col">Mot de passe</th>
+            <th scope="col">Inscription</th>
+        </tr>
+    </thead>
+    <tbody class="table-group-divider table-divider-color">
+        <?php
+        if ($result->num_rows > 0) {
+            // Output data of each row
+            while ($row = $result->fetch_assoc()) {
+                echo "<tr>";
+                echo "<th scope='row'>" . $row["id"] . "</th>";
+                echo "<td>" . $row["nom"] . "</td>";
+                echo "<td>" . $row["prenom"] . "</td>";
+                echo "<td>" . $row["email"] . "</td>";
+                echo "<td>" . $row["motdepasse"] . "</td>";
+                echo "<td>" . $row["inscription"] . "</td>";
+                echo "</tr>";
+            }
+        } else {
+            echo "<tr><td colspan='6'>Aucun résultat trouvé</td></tr>";
+        }
+        ?>
+    </tbody>
 </table>
+
+<?php
+// Fermer la connexion à la base de données
+$conn->close();
+?>
+
                 <!-- /.container-fluid -->
 
             </div>

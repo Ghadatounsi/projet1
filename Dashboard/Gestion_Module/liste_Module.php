@@ -55,29 +55,48 @@
                     <p class="mb-4">
                         <a target="_blank"
                             href="https://datatables.net"></a>.</p>
+                            <?php
+                                         include("../include/connect.php") ;
 
-                            <table class="table">
-  <thead>
-    <tr>
-      <th scope="col">#</th>
-      <th scope="col">id</th>
-      <th scope="col">titre</th>
-      <th scope="col">discription</th>
-      <th scope="col">formation</th>
-   
-      
-    </tr>
-  </thead>
-  <tbody class="table-group-divider table-divider-color">
-    <tr>
-      <th scope="row">1</th>
-      <td></td>
-     
-     
+// Requête SQL pour sélectionner toutes les lignes de la table 'module'
+$sql = "SELECT * FROM module";
+$result = $conn->query($sql);
+?>
 
-    </tr>
-  </tbody>
+<!-- Affichage des données dans la table HTML -->
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Titre</th>
+            <th scope="col">Description</th>
+            <th scope="col">Formation</th>
+        </tr>
+    </thead>
+    <tbody class="table-group-divider table-divider-color">
+        <?php
+        if ($result->num_rows > 0) {
+            // Output data of each row
+            while ($row = $result->fetch_assoc()) {
+                echo "<tr>";
+                echo "<th scope='row'>" . $row["id"] . "</th>";
+                echo "<td>" . $row["titre"] . "</td>";
+                echo "<td>" . $row["discription"] . "</td>";
+                echo "<td>" . $row["formation"] . "</td>";
+                echo "</tr>";
+            }
+        } else {
+            echo "<tr><td colspan='4'>Aucun résultat trouvé</td></tr>";
+        }
+        ?>
+    </tbody>
 </table>
+
+<?php
+// Fermer la connexion à la base de données
+$conn->close();
+?>
+
                 <!-- /.container-fluid -->
 
             </div>

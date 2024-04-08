@@ -57,28 +57,54 @@
                             href="https://datatables.net"></a>.</p>
 
                             <table class="table">
-  <thead>
-    <tr>
-      <th scope="col">#</th>
-      <th scope="col">id</th>
-      <th scope="col">nom</th>
-      <th scope="col">prenom</th>
-      <th scope="col">specialisation</th>
-      <th scope="col">biographe</th>
-      <th scope="col">formation</th>
-      
-      
-    </tr>
-  </thead>
-  <tbody class="table-group-divider table-divider-color">
-    <tr>
-      <th scope="row">1</th>
-      <td></td>
-      <td></td>
-   
+ 
+    <?php
+// Connexion à la base de données
+include("../include/connect.php") ;
 
-    </tr>
-  </tbody>
+// Requête SQL pour sélectionner toutes les lignes de la table 'formateur'
+$sql = "SELECT * FROM formateur";
+$result = $conn->query($sql);
+?>
+
+<!-- Affichage des données dans la table HTML -->
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Nom</th>
+            <th scope="col">Prénom</th>
+            <th scope="col">Spécialisation</th>
+            <th scope="col">Biographie</th>
+            <th scope="col">Formation</th>
+        </tr>
+    </thead>
+    <tbody class="table-group-divider table-divider-color">
+        <?php
+        if ($result->num_rows > 0) {
+            // Output data of each row
+            while ($row = $result->fetch_assoc()) {
+                echo "<tr>";
+                echo "<th scope='row'>" . $row["id"] . "</th>";
+                echo "<td>" . $row["nom"] . "</td>";
+                echo "<td>" . $row["prenom"] . "</td>";
+                echo "<td>" . $row["specialisation"] . "</td>";
+                echo "<td>" . $row["biographe"] . "</td>";
+                echo "<td>" . $row["formation"] . "</td>";
+                echo "</tr>";
+            }
+        } else {
+            echo "<tr><td colspan='6'>Aucun résultat trouvé</td></tr>";
+        }
+        ?>
+    </tbody>
+</table>
+
+<?php
+// Fermer la connexion à la base de données
+$conn->close();
+?>
+
 </table>
                 <!-- /.container-fluid -->
 

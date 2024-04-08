@@ -56,27 +56,54 @@
                             href="https://datatables.net"></a></p>
 
                             <table class="table">
-  <thead>
-    <tr>
-      <th scope="col">#</th>
-      <th scope="col">id</th>
-      <th scope="col">contenu</th>
-      <th scope="col">note</th>
-      <th scope="col">date</th>
-      <th scope="col">utilisateur</th>
-      
-      
-    </tr>
-  </thead>
-  <tbody class="table-group-divider table-divider-color">
-    <tr>
-      <th scope="row">1</th>
-      <td></td>
-      <td></td>
-   
+ 
+    
+    <?php
+                 include("../include/connect.php") ;
 
-    </tr>
-  </tbody>
+
+
+// Requête SQL pour sélectionner toutes les lignes de la table 'avis'
+$sql = "SELECT * FROM avis";
+$result = $conn->query($sql);
+?>
+
+<!-- Affichage des données dans la table HTML -->
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Contenu</th>
+            <th scope="col">Note</th>
+            <th scope="col">Date</th>
+            <th scope="col">Utilisateur</th>
+        </tr>
+    </thead>
+    <tbody class="table-group-divider table-divider-color">
+        <?php
+        if ($result->num_rows > 0) {
+            // Output data of each row
+            while ($row = $result->fetch_assoc()) {
+                echo "<tr>";
+                echo "<th scope='row'>" . $row["id"] . "</th>";
+                echo "<td>" . $row["contenu"] . "</td>";
+                echo "<td>" . $row["note"] . "</td>";
+                echo "<td>" . $row["date"] . "</td>";
+                echo "<td>" . $row["utilisateur"] . "</td>";
+                echo "</tr>";
+            }
+        } else {
+            echo "<tr><td colspan='5'>Aucun résultat trouvé</td></tr>";
+        }
+        ?>
+    </tbody>
+</table>
+
+<?php
+// Fermer la connexion à la base de données
+$conn->close();
+?>
+
 </table>
                 <!-- /.container-fluid -->
 
