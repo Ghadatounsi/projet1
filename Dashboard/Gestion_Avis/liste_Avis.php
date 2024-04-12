@@ -56,54 +56,54 @@
                             href="https://datatables.net"></a></p>
 
                             <table class="table">
- 
-    
-    <?php
-                 include("../include/connect.php") ;
-
-
-
-// Requête SQL pour sélectionner toutes les lignes de la table 'avis'
-$sql = "SELECT * FROM avis";
-$result = $conn->query($sql);
-?>
-
-<!-- Affichage des données dans la table HTML -->
-<table class="table">
     <thead>
         <tr>
-            <th scope="col">#</th>
-            <th scope="col">Contenu</th>
-            <th scope="col">Note</th>
-            <th scope="col">Date</th>
-            <th scope="col">Utilisateur</th>
+            <th scope="col">id</th>
+            <th scope="col">contenu</th>
+            <th scope="col">note</th>
+            <th scope="col">date</th>
+            <th scope="col">Actions</th> <!-- Nouvelle colonne pour les actions -->
         </tr>
     </thead>
     <tbody class="table-group-divider table-divider-color">
         <?php
+        // Connexion à la base de données
+        include("../include/connect.php");
+
+        // Requête SQL pour sélectionner toutes les lignes de la table 'formation'
+        $sql = "SELECT * FROM avis";
+        $result = $conn->query($sql);
+
         if ($result->num_rows > 0) {
             // Output data of each row
             while ($row = $result->fetch_assoc()) {
                 echo "<tr>";
-                echo "<th scope='row'>" . $row["id"] . "</th>";
+                echo "<td>" . $row["id"] . "</td>";
                 echo "<td>" . $row["contenu"] . "</td>";
-                echo "<td>" . $row["note"] . "</td>";
+                echo "<td>" . $row["note"] . "</td>";         
                 echo "<td>" . $row["date"] . "</td>";
-                echo "<td>" . $row["utilisateur"] . "</td>";
+                echo "<td>";
+                echo "<form action='modifier_avis.php?id=" . $row['id'] . "' method='post'>";
+                echo "<input type='hidden' name='avis_id' value='" . $row['id'] . "'>";
+                echo "<button type='submit' class='btn btn-primary'><i class='fa fa-pencil' aria-hidden='true'></i>
+                Modifier</button>";
+                echo "</form>";
+                echo "<form action='../Controller/supprimer_avis.php' method='post'>";
+                echo "<input type='hidden' name='supprimer_avis' value='1'>";
+                echo "<input type='hidden' name='avis_id' value='" . $row['id'] . "'>";
+                echo "<button type='submit' class='btn btn-danger'><i class='fa fa-trash' aria-hidden='true'></i>
+                </button>";
+                echo "</form>";
+                echo "</td>";
                 echo "</tr>";
             }
         } else {
-            echo "<tr><td colspan='5'>Aucun résultat trouvé</td></tr>";
+            echo "<tr><td colspan='9'>Aucun résultat trouvé</td></tr>";
         }
+        // Fermer la connexion à la base de données
+        $conn->close();
         ?>
     </tbody>
-</table>
-
-<?php
-// Fermer la connexion à la base de données
-$conn->close();
-?>
-
 </table>
                 <!-- /.container-fluid -->
 

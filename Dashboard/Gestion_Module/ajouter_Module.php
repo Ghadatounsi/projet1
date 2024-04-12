@@ -42,39 +42,23 @@
 
                 <!-- End of Topbar -->
 
-                <!-- Begin Page Content -->
-<form style="padding-left:5%;padding-right:5%">
+<!-- Begin Page Content -->
+<form style="padding-left:5%;padding-right:5%" method="post" action="../Controller/ajouter_module.php">
   <div class="row mb-4">
     <div class="col">
       <div data-mdb-input-init class="form-outline">
-      <label class="form-label" for="form6Example1">Titre</label>
-
-        <input type="text" id="form6Example1" class="form-control" />
+        <label class="form-label" for="form6Example1">Titre</label>
+        <input type="text" name="titre"  id="form6Example1" class="form-control" />
       </div>
     </div>
     <div class="col">
-    <label class="form-label" for="form6Example2">Discription </label>
-
+      <label class="form-label" for="form6Example2">Discription</label>
       <div data-mdb-input-init class="form-outline">
-        <input type="text" id="form6Example2" class="form-control" />
+        <input type="text" name="discription"  id="form6Example2" class="form-control" />
       </div>
     </div>
   </div>
 
- 
-
-  
-
-
-
-
-  <!-- formateur  input -->
-  <select class="form-select" aria-label="Disabled select " disabled>
-    <option selected>Selection de Formation</option>
-    <option value="1">One</option>
-    <option value="2">Two</option>
-    <option value="3">Three</option>
-  </select>
 
 
 
@@ -90,10 +74,9 @@
     />
     <label class="form-check-label" for="form6Example8"> Create an account? </label>
   </div>
-
-  <!-- Submit button -->
-  <button data-mdb-ripple-init type="button" class="btn btn-primary btn-block mb-4">Place order</button>
-</form>                
+    <!-- Submit button -->
+    <button data-mdb-ripple-init type="submit" name="ajouter_module" class="btn btn-primary btn-block mb-4">Ajouter</button>
+</form>               
 
 
 

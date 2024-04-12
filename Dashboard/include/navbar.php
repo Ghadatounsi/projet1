@@ -84,9 +84,9 @@
     </a>
     <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
         <div class="bg-white py-2 collapse-inner rounded">
-            <h6 class="collapse-header">Gestion Module:</h6>
-            <a class="collapse-item" href="http://localhost/projet1/dashboard/Gestion_Module/ajouter_Module.php">Ajouter De Module</a>
-            <a class="collapse-item" href="http://localhost/projet1/dashboard/Gestion_Module/liste_Module.php">Liste De Module</a>
+            <h6 class="collapse-header">Gestion Module</h6>
+            <a class="collapse-item" href="http://localhost/projet1/dashboard/Gestion_Module/ajouter_module.php">Ajouter De Module</a>
+            <a class="collapse-item" href="http://localhost/projet1/dashboard/Gestion_Module/liste_module.php">Liste De Module</a>
           
         </div>
     </div>
@@ -108,7 +108,7 @@
     <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#accordionSidebar">
         <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">Gestion Utilisateur:</h6>
-            <a class="collapse-item" href="http://localhost/projet1/dashboard/Gestion_Utilisateur/ajouter_utilisateu.php">Ajouter De Utilisateur</a>
+            <a class="collapse-item" href="http://localhost/projet1/dashboard/Gestion_Utilisateur/ajouter_utilisateur.php">Ajouter De Utilisateur</a>
             <a class="collapse-item" href="http://localhost/projet1/dashboard/Gestion_Utilisateur/liste_utilisateur.php">Liste Des Utilisateur</a>
         </div>
     </div>
@@ -125,9 +125,9 @@
     </a>
     <div id="collapseSix" class="collapse" aria-labelledby="headingSix" data-parent="#accordionSidebar">
         <div class="bg-white py-2 collapse-inner rounded">
-            <h6 class="collapse-header">Gestion Actualite:</h6>
-            <a class="collapse-item" href="http://localhost/projet1/dashboard/Gestion_Actualite/ajouter_Actualite.php">Ajouter De Actualite</a>
-            <a class="collapse-item" href="http://localhost/projet1/dashboard/Gestion_Actualite/liste_Actualite.php">Liste Des Actualite</a>
+            <h6 class="collapse-header">Gestion Actualite</h6>
+            <a class="collapse-item" href="http://localhost/projet1/dashboard/Gestion_Actualite/ajouter_actualite.php">Ajouter De Actualite</a>
+            <a class="collapse-item" href="http://localhost/projet1/dashboard/Gestion_Actualite/liste_actualite.php">Liste Des Actualite</a>
         </div>
     </div>
 </li>
@@ -146,8 +146,7 @@
     <div id="collapseSeven" class="collapse" aria-labelledby="headingSeven" data-parent="#accordionSidebar">
         <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">Gestion Avis:</h6>
-            <a class="collapse-item" href="http://localhost/projet1/dashboard/Gestion_Avis/ajouter_Avis.php">Ajouter De Avis</a>
-            <a class="collapse-item" href="http://localhost/projet1/dashboard/Gestion_Avis/liste_Avis.php">Liste Des Avis</a>
+            <a class="collapse-item" href="http://localhost/projet1/dashboard/Gestion_Avis/liste_avis.php">Liste Des Avis</a>
         </div>
     </div>
 </li>

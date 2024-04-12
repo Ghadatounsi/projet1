@@ -13,9 +13,7 @@
 
     <!-- Custom fonts for this template-->
     <link href="../vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
-    <link
-        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
 
     <!-- Custom styles for this template-->
     <link href="../css/sb-admin-2.min.css" rel="stylesheet">
@@ -30,7 +28,6 @@
 
         <?php include("../include/navbar.php") ?>
 
-
         <!-- Content Wrapper -->
         <div id="content-wrapper" class="d-flex flex-column">
 
@@ -43,73 +40,45 @@
                 <!-- End of Topbar -->
 
                 <!-- Begin Page Content -->
-<form style="padding-left:5%;padding-right:5%">
-  <div class="row mb-4">
-    <div class="col">
-      <div data-mdb-input-init class="form-outline">
-      <label class="form-label" for="form6Example1">contenu</label>
-
-        <input type="text" id="form6Example1" class="form-control" />
-      </div>
-    </div>
-    <div class="col">
-    <label class="form-label" for="form6Example2">note </label>
-
-      <div data-mdb-input-init class="form-outline">
-        <input type="text" id="form6Example2" class="form-control" />
-      </div>
-    </div>
-  </div>
-
- 
-
-  
-
-  <div class="mb-3">
-      
-      <div class="input-group">
-     
-
-      <!-- Date input -->
-      <label class="form-label" for="form6Example7">Date</label>
-      <input type="Date" id="form6Example7" class="form-control"  style="margin-left:1%"/>
-      </div>
+<form style="padding-left:5%;padding-right:5%" method="POST" action="../Controller/ajouter_utilisateur.php">
+    <div class="row mb-4">
+        <div class="col">
+            <div data-mdb-input-init class="form-outline">
+                <label class="form-label" for="nom">Nom</label>
+                <input type="text" name="nom" id="nom" class="form-control" />
+            </div>
+        </div>
+        <div class="col">
+            <label class="form-label" for="prenom">Prénom</label>
+            <div data-mdb-input-init class="form-outline">
+                <input type="text" name="prenom" id="prenom" class="form-control" />
+            </div>
+        </div>
     </div>
 
+    <!-- Text input -->
+    <div data-mdb-input-init class="form-outline mb-4">
+        <label class="form-label" for="email">Email</label>
+        <input type="text" name="email" id="email" class="form-control" />
+    </div>
 
+    <!-- Message input -->
+    <div data-mdb-input-init class="form-outline mb-4">
+        <label class="form-label" for="motdepasse">Mot de passe</label>
+        <input type="password" name="motdepasse" id="motdepasse" class="form-control" />
+    </div>
 
-  <!-- formateur  input -->
-  <select class="form-select" aria-label="Disabled select " disabled>
-    <option selected>Selection le formateur</option>
-    <option value="1">One</option>
-    <option value="2">Two</option>
-    <option value="3">Three</option>
-  </select>
+   
 
+    <!-- Checkbox -->
+    <div class="form-check d-flex justify-content-center mb-4">
+        <input class="form-check-input me-2" type="checkbox" value="" id="create_account" checked />
+        <label class="form-check-label" for="create_account"> Create an account? </label>
+    </div>
 
-
-
-  <!-- Checkbox -->
-  <div class="form-check d-flex justify-content-center mb-4">
-    <input
-      class="form-check-input me-2"
-      type="checkbox"
-      value=""
-      id="form6Example8"
-      checked
-    />
-    <label class="form-check-label" for="form6Example8"> Create an account? </label>
-  </div>
-
-  <!-- Submit button -->
-  <button data-mdb-ripple-init type="button" class="btn btn-primary btn-block mb-4">Place order</button>
-</form>                
-
-
-
-
-
-
+    <!-- Submit button -->
+    <button data-mdb-ripple-init type="submit" name="ajouter_utilisateur_submit" class="btn btn-primary btn-block mb-4">Place order</button>
+</form>
 
                 <!-- /.container-fluid -->
 
@@ -174,7 +143,7 @@
     <script src="../js/demo/chart-area-demo.js"></script>
     <script src="../js/demo/chart-pie-demo.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
 
 </body>
 

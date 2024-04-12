@@ -1,3 +1,12 @@
+<?php
+// Inclure le contrôleur
+require_once '../Controller/ajouter_formateur.php';
+
+// Instancier le modèle
+$formateurModel = new FormateurModel();
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -13,8 +22,7 @@
 
     <!-- Custom fonts for this template-->
     <link href="../vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
-    <link
-        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
         rel="stylesheet">
 
     <!-- Custom styles for this template-->
@@ -38,72 +46,40 @@
             <div id="content">
 
                 <!-- Topbar -->
-                <?php include("../include/header.php") ; ?>
+                <?php include("../include/header.php"); ?>
 
                 <!-- End of Topbar -->
 
                 <!-- Begin Page Content -->
-<form style="padding-left:5%;padding-right:5%">
-  <div class="row mb-4">
-    <div class="col">
-      <div data-mdb-input-init class="form-outline">
-      <label class="form-label" for="form6Example1">Nom</label>
-
-        <input type="text" id="form6Example1" class="form-control" />
-      </div>
+                <form style="padding-left:5%;padding-right:5%" method="post" action="../Controller/ajouter_formateur.php">
+    <div class="row mb-4">
+        <div class="col">
+            <div data-mdb-input-init class="form-outline">
+                <label class="form-label" for="form6Example1">Nom</label>
+                <input type="text" name="nom" id="form6Example1" class="form-control" />
+            </div>
+        </div>
+        <div class="col">
+            <div data-mdb-input-init class="form-outline">
+                <label class="form-label" for="form6Example2">Prénom</label>
+                <input type="text" name="prenom" id="form6Example2" class="form-control" />
+            </div>
+        </div>
     </div>
-    <div class="col">
-    <label class="form-label" for="form6Example2">Prénom </label>
 
-      <div data-mdb-input-init class="form-outline">
-        <input type="text" id="form6Example2" class="form-control" />
-      </div>
+    <div data-mdb-input-init class="form-outline mb-4">
+        <label class="form-label" for="form6Example3">Spécialisation</label>
+        <input type="text" name="specialisation" id="form6Example3" class="form-control" />
     </div>
-  </div>
 
-  <!-- Text input -->
-  <div data-mdb-input-init class="form-outline mb-4">
-  <label class="form-label" for="form6Example3">specialisation</label>
+    <div data-mdb-input-init class="form-outline mb-4">
+        <label class="form-label" for="form6Example4">Biographie</label>
+        <textarea name="biographe" class="form-control" id="form6Example4" rows="4"></textarea>
+    </div>
 
-    <input type="text" id="form6Example3" class="form-control" />
-  </div>
-
-   <!-- Message input -->
-   <label class="form-label" for="form6Example4">biographe </label>
-
-   <div data-mdb-input-init class="form-outline mb-4">
-    <textarea class="form-control" id="form6Example4" rows="4"></textarea>
-  </div>
-
-  
-
- 
-
-
-
-  <!-- formateur  input -->
-  <select class="form-select" aria-label="Disabled select " disabled>
-    <option selected>Selection de Formation</option>
-    <option value="1">One</option>
-    <option value="2">Two</option>
-    <option value="3">Three</option>
-  </select>
-
-<br><br><br><br>
-
-  <!-- Checkbox -->
-  <div class="form-check d-flex justify-content-center mb-4">
-    <input  class="form-check-input me-2" type="checkbox" value="" id="form6Example8"  checked />
-    <label class="form-check-label" for="form6Example8"> Create an account? </label>
-  </div>
-
-  <!-- Submit button -->
-  <button data-mdb-ripple-init type="button" class="btn btn-primary btn-block mb-4">Place order</button>
-</form>                
-
-
-
-
+    <!-- Submit button -->
+    <button data-mdb-ripple-init type="submit" name="ajouter_formateur" class="btn btn-primary btn-block mb-4">Ajouter</button>
+</form>
 
 
 
@@ -170,7 +146,7 @@
     <script src="../js/demo/chart-area-demo.js"></script>
     <script src="../js/demo/chart-pie-demo.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
 
 </body>
 

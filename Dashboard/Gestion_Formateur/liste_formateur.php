@@ -9,13 +9,11 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>INIR - Liste </title>
+    <title>INIR - Liste des formateurs</title>
 
     <!-- Custom fonts for this template -->
     <link href="../vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
-    <link
-        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
 
     <!-- Custom styles for this template -->
     <link href="../css/sb-admin-2.min.css" rel="stylesheet">
@@ -51,62 +49,62 @@
                 <div class="container-fluid">
 
                     <!-- Page Heading -->
-                    <h1 class="h3 mb-2 text-gray-800">liste des formateurs</h1>
-                    <p class="mb-4">
-                      <a target="_blank"
-                            href="https://datatables.net"></a>.</p>
+                    <h1 class="h3 mb-2 text-gray-800">Liste des formateurs</h1>
+                    <p class="mb-4">Consultez ci-dessous la liste des formateurs.</p>
 
-                            <table class="table">
- 
-    <?php
-// Connexion à la base de données
-include("../include/connect.php") ;
+                    <div class="table-responsive">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">Nom</th>
+                                    <th scope="col">Prénom</th>
+                                    <th scope="col">Spécialisation</th>
+                                    <th scope="col">Biographie</th>
+                                    <th scope="col">Actions</th> <!-- Nouvelle colonne pour les actions -->
+                                </tr>
+                            </thead>
+                            <tbody>                    
+                                <?php   
+                                    // Connexion à la base de données
+                                    include("../include/connect.php");
 
-// Requête SQL pour sélectionner toutes les lignes de la table 'formateur'
-$sql = "SELECT * FROM formateur";
-$result = $conn->query($sql);
-?>
-
-<!-- Affichage des données dans la table HTML -->
-<table class="table">
-    <thead>
-        <tr>
-            <th scope="col">#</th>
-            <th scope="col">Nom</th>
-            <th scope="col">Prénom</th>
-            <th scope="col">Spécialisation</th>
-            <th scope="col">Biographie</th>
-            <th scope="col">Formation</th>
-        </tr>
-    </thead>
-    <tbody class="table-group-divider table-divider-color">
-        <?php
-        if ($result->num_rows > 0) {
-            // Output data of each row
-            while ($row = $result->fetch_assoc()) {
-                echo "<tr>";
-                echo "<th scope='row'>" . $row["id"] . "</th>";
-                echo "<td>" . $row["nom"] . "</td>";
-                echo "<td>" . $row["prenom"] . "</td>";
-                echo "<td>" . $row["specialisation"] . "</td>";
-                echo "<td>" . $row["biographe"] . "</td>";
-                echo "<td>" . $row["formation"] . "</td>";
-                echo "</tr>";
-            }
-        } else {
-            echo "<tr><td colspan='6'>Aucun résultat trouvé</td></tr>";
-        }
-        ?>
-    </tbody>
-</table>
-
-<?php
-// Fermer la connexion à la base de données
-$conn->close();
-?>
-
-</table>
-                <!-- /.container-fluid -->
+                                    // Requête SQL pour sélectionner toutes les lignes de la table 'formateur'
+                                    $sql = "SELECT * FROM formateur";
+                                    $result = $conn->query($sql);
+                                    
+                                    if ($result->num_rows > 0) {
+                                        // Output data of each row
+                                        while ($row = $result->fetch_assoc()) {
+                                            echo "<tr>";
+                                            echo "<td>" . $row["id"] . "</td>";
+                                            echo "<td>" . $row["nom"] . "</td>";
+                                            echo "<td>" . $row["prenom"] . "</td>";
+                                            echo "<td>" . $row["specialisation"] . "</td>";
+                                            echo "<td>" . $row["biographe"] . "</td>";
+                                            echo "<td>";
+                                            echo "<form action='modifier_formateur.php?id=" . $row['id'] . "' method='post'>";
+                                            echo "<input type='hidden' name='formateur_id' value='" . $row['id'] . "'>";
+                                            echo "<button type='submit' class='btn btn-primary'><i class='fa fa-pencil' aria-hidden='true'></i> 
+                                            Modifier</button>";
+                                            echo "</form>";
+                                            echo "<form action='../Controller/supprimer_formateur.php' method='post'>";
+                                            echo "<input type='hidden' name='supprimer_formateur' value='1'>";
+                                            echo "<input type='hidden' name='formateur_id' value='" . $row['id'] . "'>";
+                                            echo "<button type='submit' class='btn btn-danger'><i class='fa fa-trash' aria-hidden='true'></i> Supprimer</button>";
+                                            echo "</form>";
+                                            echo "</td>";
+                                            echo "</tr>";
+                                        }
+                                    } else {
+                                        echo "<tr><td colspan='6'>Aucun résultat trouvé</td></tr>";
+                                    }
+                                    // Fermer la connexion à la base de données
+                                    $conn->close();
+                                ?>
+                            </tbody>
+                        </table>
+             <!-- /.container-fluid -->
 
             </div>
             <!-- End of Main Content -->

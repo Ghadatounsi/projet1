@@ -48,14 +48,14 @@ class FormationModel {
         return $result->fetch_assoc();
     }
 
-    // Fonction pour mettre à jour une formation dans la base de données
-    public function updateFormation($id, $titre, $description, $objectif, $programme, $duree, $prix, $date, $formateur) {
-        $stmt = $this->db->prepare("UPDATE formation SET titre=?, description=?, objectif=?, programme=?, durée=?, prix=?, date=?, formateur=? WHERE id=?");
-        $stmt->bind_param("ssssiddii", $titre, $description, $objectif, $programme, $duree, $prix, $date, $formateur, $id);
+    public function updateFormation($id, $titre, $description, $objectif, $programme, $duree, $prix, $date) {
+        $dateFormatted = date('Y-m-d', strtotime($date));
+        $stmt = $this->db->prepare("UPDATE formation SET titre=?, description=?, objectif=?, programme=?, durée=?, prix=?, date=? WHERE id=?");
+        $stmt->bind_param("ssssiddi", $titre, $description, $objectif, $programme, $duree, $prix, $dateFormatted, $id);
         $stmt->execute();
         $stmt->close();
     }
-
+    
     // Fonction pour supprimer une formation de la base de données
     public function supprimerFormation($formationId) {
         $stmt = $this->db->prepare("DELETE FROM formation WHERE id = ?");

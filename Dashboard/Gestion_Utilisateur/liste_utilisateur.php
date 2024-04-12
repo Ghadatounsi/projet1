@@ -1,3 +1,12 @@
+<?php
+// Assurez-vous que le chemin d'inclusion est correct
+include("../include/connect.php");
+
+// Requête SQL pour sélectionner toutes les lignes de la table 'utilisateur'
+$sql = "SELECT * FROM utilisateur";
+$result = $conn->query($sql);
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -9,12 +18,11 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>INIR - Liste </title>
+    <title>INIR - Liste des utilisateurs</title>
 
     <!-- Custom fonts for this template -->
     <link href="../vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
-    <link
-        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
         rel="stylesheet">
 
     <!-- Custom styles for this template -->
@@ -31,9 +39,7 @@
     <div id="wrapper">
 
         <!-- Sidebar -->
-        
         <?php include("../include/navbar.php") ?>
-
         <!-- End of Sidebar -->
 
         <!-- Content Wrapper -->
@@ -44,64 +50,63 @@
 
                 <!-- Topbar -->
                 <?php include("../include/header.php") ; ?>
-
                 <!-- End of Topbar -->
 
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
 
                     <!-- Page Heading -->
-                    <h1 class="h3 mb-2 text-gray-800">liste des utilisateurs</h1>
+                    <h1 class="h3 mb-2 text-gray-800">Liste des utilisateurs</h1>
                     <p class="mb-4">
-                         <a target="_blank"
+                        <a target="_blank"
                             href="https://datatables.net"></a>.</p>
 
+
+                     <table id="dataTable" class="table">
+                        <thead>
+                            <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">Nom</th>
+                                <th scope="col">Prénom</th>
+                                <th scope="col">Email</th>
+                                <th scope="col">Mot de passe</th>
+                                <th scope="col">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody class="table-group-divider table-divider-color">
                             <?php
-                                  include("../include/connect.php") ;
+                            if ($result->num_rows > 0) {
+                                // Output data of each row
+                                while ($row = $result->fetch_assoc()) {
+                                    echo "<tr>";
+                                    echo "<th scope='row'>" . $row["id"] . "</th>";
+                                    echo "<td>" . $row["nom"] . "</td>";
+                                    echo "<td>" . $row["prenom"] . "</td>";
+                                    echo "<td>" . $row["email"] . "</td>";
+                                    echo "<td>" . $row["motdepasse"] . "</td>";
+                                    echo "<td>";
+                                    echo "<form action='http://localhost/projet1/dashboard/Gestion_Utilisateur/modifier_utilisateur.php?id=" . $row['id'] . "' method='post'>";
+                                    echo "<input type='hidden' name='utilisateur_id' value='" . $row['id'] . "'>";
+                                    echo "<button type='submit' class='btn btn-primary'><i class='fa fa-pencil' aria-hidden='true'></i> Modifier</button>";
+                                    echo "</form>";
+                                    echo "<form action='../Controller/supprimer_utilisateur.php' method='post'>";
+                                    echo "<input type='hidden' name='supprimer_utilisateur' value='1'>";
+                                    echo "<input type='hidden' name='utilisateur_id' value='" . $row['id'] . "'>";
+                                    echo "<button type='submit' class='btn btn-danger'><i class='fa fa-trash' aria-hidden='true'></i> Supprimer</button>";
+                                    echo "</form>";
+                                    echo "</td>";
+                                    echo "</tr>";
+                                }
+                            } else {
+                                echo "<tr><td colspan='7'>Aucun résultat trouvé</td></tr>";
+                            }
+                            // Fermer la connexion à la base de données
+                            $conn->close();
+                            ?>
+                        </tbody>
+                    </table>
 
-// Requête SQL pour sélectionner toutes les lignes de la table 'utilisateur'
-$sql = "SELECT * FROM utilisateur";
-$result = $conn->query($sql);
-?>
-
-<!-- Affichage des données dans la table HTML -->
-<table class="table">
-    <thead>
-        <tr>
-            <th scope="col">#</th>
-            <th scope="col">Nom</th>
-            <th scope="col">Prénom</th>
-            <th scope="col">Email</th>
-            <th scope="col">Mot de passe</th>
-            <th scope="col">Inscription</th>
-        </tr>
-    </thead>
-    <tbody class="table-group-divider table-divider-color">
-        <?php
-        if ($result->num_rows > 0) {
-            // Output data of each row
-            while ($row = $result->fetch_assoc()) {
-                echo "<tr>";
-                echo "<th scope='row'>" . $row["id"] . "</th>";
-                echo "<td>" . $row["nom"] . "</td>";
-                echo "<td>" . $row["prenom"] . "</td>";
-                echo "<td>" . $row["email"] . "</td>";
-                echo "<td>" . $row["motdepasse"] . "</td>";
-                echo "<td>" . $row["inscription"] . "</td>";
-                echo "</tr>";
-            }
-        } else {
-            echo "<tr><td colspan='6'>Aucun résultat trouvé</td></tr>";
-        }
-        ?>
-    </tbody>
-</table>
-
-<?php
-// Fermer la connexion à la base de données
-$conn->close();
-?>
-
+                </div>
                 <!-- /.container-fluid -->
 
             </div>
@@ -163,7 +168,11 @@ $conn->close();
     <script src="../vendor/datatables/dataTables.bootstrap4.min.js"></script>
 
     <!-- Page level custom scripts -->
-    <script src="../js/demo/datatables-demo.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('#dataTable').DataTable();
+        });
+    </script>
 
 </body>
 

@@ -9,12 +9,11 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>INIR - Liste </title>
+    <title>INIR - Liste des modules</title>
 
     <!-- Custom fonts for this template -->
     <link href="../vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
-    <link
-        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
         rel="stylesheet">
 
     <!-- Custom styles for this template -->
@@ -31,9 +30,7 @@
     <div id="wrapper">
 
         <!-- Sidebar -->
-        
         <?php include("../include/navbar.php") ?>
-
         <!-- End of Sidebar -->
 
         <!-- Content Wrapper -->
@@ -44,59 +41,64 @@
 
                 <!-- Topbar -->
                 <?php include("../include/header.php") ; ?>
-
                 <!-- End of Topbar -->
 
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
 
                     <!-- Page Heading -->
-                    <h1 class="h3 mb-2 text-gray-800">liste des modules</h1>
+                    <h1 class="h3 mb-2 text-gray-800">Liste des modules</h1>
                     <p class="mb-4">
-                        <a target="_blank"
-                            href="https://datatables.net"></a>.</p>
+                        <a target="_blank" href="https://datatables.net"></a>.</p>
+
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th scope="col">ID</th>
+                                <th scope="col">Titre</th>
+                                <th scope="col">Description</th>
+                                <th scope="col">Actions</th> <!-- Nouvelle colonne pour les actions -->
+                            </tr>
+                        </thead>
+                        <tbody class="table-group-divider table-divider-color">
                             <?php
-                                         include("../include/connect.php") ;
+                            // Connexion à la base de données
+                            include("../include/connect.php");
 
-// Requête SQL pour sélectionner toutes les lignes de la table 'module'
-$sql = "SELECT * FROM module";
-$result = $conn->query($sql);
-?>
+                            // Requête SQL pour sélectionner toutes les lignes de la table 'module'
+                            $sql = "SELECT * FROM module";
+                            $result = $conn->query($sql);
 
-<!-- Affichage des données dans la table HTML -->
-<table class="table">
-    <thead>
-        <tr>
-            <th scope="col">#</th>
-            <th scope="col">Titre</th>
-            <th scope="col">Description</th>
-            <th scope="col">Formation</th>
-        </tr>
-    </thead>
-    <tbody class="table-group-divider table-divider-color">
-        <?php
-        if ($result->num_rows > 0) {
-            // Output data of each row
-            while ($row = $result->fetch_assoc()) {
-                echo "<tr>";
-                echo "<th scope='row'>" . $row["id"] . "</th>";
-                echo "<td>" . $row["titre"] . "</td>";
-                echo "<td>" . $row["discription"] . "</td>";
-                echo "<td>" . $row["formation"] . "</td>";
-                echo "</tr>";
-            }
-        } else {
-            echo "<tr><td colspan='4'>Aucun résultat trouvé</td></tr>";
-        }
-        ?>
-    </tbody>
-</table>
+                            if ($result->num_rows > 0) {
+                                // Output data of each row
+                                while ($row = $result->fetch_assoc()) {
+                                    echo "<tr>";
+                                    echo "<td>" . $row["id"] . "</td>";
+                                    echo "<td>" . $row["titre"] . "</td>";
+                                    echo "<td>" . $row["discription"] . "</td>";
+                                    echo "<td>";
+                                    echo "<form action='modifier_module.php?id=" . $row['id'] . "' method='post'>";
+                                    echo "<input type='hidden' name='module_id' value='" . $row['id'] . "'>";
+                                    echo "<button type='submit' class='btn btn-primary'><i class='fas fa-pencil-alt'></i> Modifier</button>";
+                                    echo "</form>";
+                                    echo "<form action='../Controller/supprimer_module.php' method='post'>";
+                                    echo "<input type='hidden' name='supprimer_module' value='1'>";
+                                    echo "<input type='hidden' name='module_id' value='" . $row['id'] . "'>";
+                                    echo "<button type='submit' class='btn btn-danger'><i class='fas fa-trash'></i> Supprimer</button>";
+                                    echo "</form>";
+                                    echo "</td>";
+                                    echo "</tr>";
+                                }
+                            } else {
+                                echo "<tr><td colspan='4'>Aucun résultat trouvé</td></tr>";
+                            }
+                            // Fermer la connexion à la base de données
+                            $conn->close();
+                            ?>
+                        </tbody>
+                    </table>
 
-<?php
-// Fermer la connexion à la base de données
-$conn->close();
-?>
-
+                </div>
                 <!-- /.container-fluid -->
 
             </div>
@@ -123,26 +125,6 @@ $conn->close();
         <i class="fas fa-angle-up"></i>
     </a>
 
-    <!-- Logout Modal-->
-    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-        aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
-                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">×</span>
-                    </button>
-                </div>
-                <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
-                <div class="modal-footer">
-                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                    <a class="btn btn-primary" href="login.html">Logout</a>
-                </div>
-            </div>
-        </div>
-    </div>
-
     <!-- Bootstrap core JavaScript-->
     <script src="../vendor/jquery/jquery.min.js"></script>
     <script src="../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -163,3 +145,4 @@ $conn->close();
 </body>
 
 </html>
+
