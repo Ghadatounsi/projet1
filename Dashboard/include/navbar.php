@@ -126,8 +126,8 @@
     <div id="collapseSix" class="collapse" aria-labelledby="headingSix" data-parent="#accordionSidebar">
         <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">Gestion Actualite</h6>
-            <a class="collapse-item" href="http://localhost/projet1/dashboard/Gestion_Actualite/ajouter_actualite.php">Ajouter De Actualite</a>
-            <a class="collapse-item" href="http://localhost/projet1/dashboard/Gestion_Actualite/liste_actualite.php">Liste Des Actualite</a>
+            <a class="collapse-item" href="http://localhost/projet1/dashboard/Gestion_Actualite/ajouter_Actualite.php">Ajouter De Actualite</a>
+            <a class="collapse-item" href="http://localhost/projet1/dashboard/Gestion_Actualite/liste_Actualite.php">Liste Des Actualite</a>
         </div>
     </div>
 </li>

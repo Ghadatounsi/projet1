@@ -22,7 +22,7 @@ class ModuleModel {
     }
 
     // Fonction pour ajouter un module à la base de données
-    public function ajouterModule($titre, $description) {
+    public function ajouterModule($titre, $discription) {
         $stmt = $this->db->prepare("INSERT INTO module (titre, discription) VALUES (?, ?)");
         $stmt->bind_param("ss", $titre, $description);
         $stmt->execute();
@@ -45,9 +45,9 @@ class ModuleModel {
     }
 
     // Fonction pour mettre à jour les détails d'un module dans la base de données
-    public function updateModule($id, $titre, $description) {
-        $stmt = $this->db->prepare("UPDATE module SET titre=?, description=? WHERE id=?");
-        $stmt->bind_param("ssi", $titre, $description, $id);
+    public function updateModule($id, $titre, $discription) {
+        $stmt = $this->db->prepare("UPDATE module SET titre=?, discription=? WHERE id=?");
+        $stmt->bind_param("ssi", $titre, $discription, $id);
         $stmt->execute();
         $stmt->close();
     }

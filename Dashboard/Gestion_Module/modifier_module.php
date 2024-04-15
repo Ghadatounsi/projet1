@@ -1,12 +1,12 @@
 <?php
 // Inclure le contrôleur
 include("../include/connect.php");
-require_once '../Controller/modifier_formation.php';
+require_once '../Controller/modifier_module.php';
 $id= $_GET['id'];
 
 // Instancier le modèle
-$formationModel = new FormationModel();
-$formation = $formationModel->getFormationById($id); // Supposons que vous ayez une méthode getFormationById() dans votre modèle
+$moduleModel = new ModuleModel();
+$module = $moduleModel->getModuleById($id); // Supposons que vous ayez une méthode getFormationById() dans votre modèle
 
 
 ?>
@@ -52,57 +52,25 @@ $formation = $formationModel->getFormationById($id); // Supposons que vous ayez 
 
 
                 <!-- Begin Page Content -->
-                <form style="padding-left:5%;padding-right:5%" method="post" action="../Controller/modifier_formation.php">
+                <form style="padding-left:5%;padding-right:5%" method="post" action="../Controller/modifier_module.php">
                     <div class="row mb-4">
                     <input type="hidden" name="id" value="<?php echo $id; ?>">
 
                         <div class="col">
                             <div data-mdb-input-init class="form-outline">
                                 <label class="form-label" for="form6Example1">Titre</label>
-                                <input type="text" name="titre" id="form6Example1" class="form-control" value="<?php echo $formation['titre']; ?>" />
+                                <input type="text" name="titre" id="form6Example1" class="form-control" value="<?php echo $module['titre']; ?>" />
                             </div>
                         </div>
                         <div class="col">
                             <label class="form-label" for="form6Example2">Description </label>
                             <div data-mdb-input-init class="form-outline">
-                                <input type="text" name="description" id="form6Example2" class="form-control" value="<?php echo $formation['description']; ?>" />
+                                <input type="text" name="discription" id="form6Example2" class="form-control" value="<?php echo $module['discription']; ?>" />
                             </div>
                         </div>
                     </div>
 
-                    <!-- Text input -->
-                    <div data-mdb-input-init class="form-outline mb-4">
-                        <label class="form-label" for="form6Example3">Objectif</label>
-                        <input type="text" name="objectif" id="form6Example3" class="form-control" value="<?php echo $formation['objectif']; ?>" />
-                    </div>
-
-                    <!-- Message input -->
-                    <label class="form-label" for="form6Example4">Programme </label>
-                    <div data-mdb-input-init class="form-outline mb-4">
-                        <textarea class="form-control" name="programme" id="form6Example4" rows="4"><?php echo $formation['programme']; ?></textarea>
-                    </div>
-
-                    <div class="mb-3">
-                        <div class="input-group">
-                            <!-- Durée input -->
-                            <label class="form-label" for="form6Example5">Durée</label>
-                            <input type="text" name="duree" id="form6Example5" class="form-control" style="margin-left:3%" value="<?php echo $formation['durée']; ?>" />
-
-                            <!-- Prix  input -->
-                            <label for="prixInput" class="form-label">Prix</label>
-                            <input type="number" name="prix" class="form-control" id="prixInput" placeholder="Entrez le prix" style="margin-left:3%" value="<?php echo $formation['prix']; ?>">
-                            <span class="input-group-text">TND</span>
-
-                            <!-- Date input -->
-                            <label class="form-label" for="form6Example7">Date</label>
-                            <?php  $date = date('Y-m-d', strtotime($formation['date']));?>
-                            <input type="date" name="date" id="form6Example7" class="form-control" style="margin-left:1%"  value="<?php echo $date; ?>" />
-
-
-                        </div>
-                    </div>
-
-
+                  
                     <!-- Checkbox -->
                     <div class="form-check d-flex justify-content-center mb-4">
                         <input class="form-check-input me-2" type="checkbox" value="" id="form6Example8" checked />

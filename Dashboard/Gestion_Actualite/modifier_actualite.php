@@ -52,7 +52,7 @@ $actualite = $actualiteModel->getActualiteById($id); // Supposons que vous ayez 
 
 
                 <!-- Begin Page Content -->
-                <form style="padding-left:5%;padding-right:5%" method="post" action="../Controller/modifier_actualite.php">
+                <form style="padding-left:5%;padding-right:5%" method="post" action="../Controller/modifier_Actualite.php">
                     <div class="row mb-4">
                     <input type="hidden" name="id" value="<?php echo $id; ?>">
 

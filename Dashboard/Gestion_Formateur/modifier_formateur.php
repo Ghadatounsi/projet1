@@ -1,12 +1,12 @@
 <?php
 // Inclure le contrôleur
 include("../include/connect.php");
-require_once '../Controller/modifier_formation.php';
+require_once '../Controller/modifier_formateur.php';
 $id= $_GET['id'];
 
 // Instancier le modèle
-$formationModel = new FormationModel();
-$formation = $formationModel->getFormationById($id); // Supposons que vous ayez une méthode getFormationById() dans votre modèle
+$formateurModel = new FormateurModel();
+$formateur = $formateurModel->getFormateurById($id); // Supposons que vous ayez une méthode getFormateurById() dans votre modèle
 
 
 ?>
@@ -22,7 +22,7 @@ $formation = $formationModel->getFormationById($id); // Supposons que vous ayez 
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>INIR Administration - Modifier une formation</title>
+    <title>INIR Administration - Modifier un formateur</title>
 
     <!-- Custom fonts for this template-->
     <link href="../vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -49,58 +49,32 @@ $formation = $formationModel->getFormationById($id); // Supposons que vous ayez 
             <!-- Main Content -->
             <div id="content">
                 <?php include("../include/header.php"); ?>
+    <form style="padding-left:5%;padding-right:5%" method="post" action="../Controller/ajouter_formateur.php">
+    <div class="row mb-4">
+        <div class="col">
+            <div data-mdb-input-init class="form-outline">
+                <label class="form-label" for="form6Example1">Nom</label>
+                <input type="text" name="nom" id="form6Example1" class="form-control" />
+            </div>
+        </div>
+        <div class="col">
+            <div data-mdb-input-init class="form-outline">
+                <label class="form-label" for="form6Example2">Prénom</label>
+                <input type="text" name="prenom" id="form6Example2" class="form-control" />
+            </div>
+        </div>
+    </div>
 
+    <div data-mdb-input-init class="form-outline mb-4">
+        <label class="form-label" for="form6Example3">Spécialisation</label>
+        <input type="text" name="specialisation" id="form6Example3" class="form-control" />
+    </div>
 
-                <!-- Begin Page Content -->
-                <form style="padding-left:5%;padding-right:5%" method="post" action="../Controller/modifier_formation.php">
-                    <div class="row mb-4">
-                    <input type="hidden" name="id" value="<?php echo $id; ?>">
+    <div data-mdb-input-init class="form-outline mb-4">
+        <label class="form-label" for="form6Example4">Biographie</label>
+        <textarea name="biographe" class="form-control" id="form6Example4" rows="4"></textarea>
+    </div>
 
-                        <div class="col">
-                            <div data-mdb-input-init class="form-outline">
-                                <label class="form-label" for="form6Example1">Titre</label>
-                                <input type="text" name="titre" id="form6Example1" class="form-control" value="<?php echo $formation['titre']; ?>" />
-                            </div>
-                        </div>
-                        <div class="col">
-                            <label class="form-label" for="form6Example2">Description </label>
-                            <div data-mdb-input-init class="form-outline">
-                                <input type="text" name="description" id="form6Example2" class="form-control" value="<?php echo $formation['description']; ?>" />
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Text input -->
-                    <div data-mdb-input-init class="form-outline mb-4">
-                        <label class="form-label" for="form6Example3">Objectif</label>
-                        <input type="text" name="objectif" id="form6Example3" class="form-control" value="<?php echo $formation['objectif']; ?>" />
-                    </div>
-
-                    <!-- Message input -->
-                    <label class="form-label" for="form6Example4">Programme </label>
-                    <div data-mdb-input-init class="form-outline mb-4">
-                        <textarea class="form-control" name="programme" id="form6Example4" rows="4"><?php echo $formation['programme']; ?></textarea>
-                    </div>
-
-                    <div class="mb-3">
-                        <div class="input-group">
-                            <!-- Durée input -->
-                            <label class="form-label" for="form6Example5">Durée</label>
-                            <input type="text" name="duree" id="form6Example5" class="form-control" style="margin-left:3%" value="<?php echo $formation['durée']; ?>" />
-
-                            <!-- Prix  input -->
-                            <label for="prixInput" class="form-label">Prix</label>
-                            <input type="number" name="prix" class="form-control" id="prixInput" placeholder="Entrez le prix" style="margin-left:3%" value="<?php echo $formation['prix']; ?>">
-                            <span class="input-group-text">TND</span>
-
-                            <!-- Date input -->
-                            <label class="form-label" for="form6Example7">Date</label>
-                            <?php  $date = date('Y-m-d', strtotime($formation['date']));?>
-                            <input type="date" name="date" id="form6Example7" class="form-control" style="margin-left:1%"  value="<?php echo $date; ?>" />
-
-
-                        </div>
-                    </div>
 
 
                     <!-- Checkbox -->
@@ -110,7 +84,7 @@ $formation = $formationModel->getFormationById($id); // Supposons que vous ayez 
                     </div>
 
                     <!-- Submit button -->
-                    <button data-mdb-ripple-init type="submit" name="modifier_formation" class="btn btn-primary btn-block mb-4">Modifier</button>
+                    <button data-mdb-ripple-init type="submit" name="modifier_formateur" class="btn btn-primary btn-block mb-4">Modifier</button>
                 </form>
 
                 <div class="container-fluid">
@@ -164,4 +138,5 @@ $formation = $formationModel->getFormationById($id); // Supposons que vous ayez 
         <script src="../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
         <!-- Core plugin JavaScript-->
-        <script src="../vendor
+        <script src="../vendor 
+

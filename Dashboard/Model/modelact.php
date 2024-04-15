@@ -52,14 +52,12 @@ public function updateActualite($id, $titre, $contenu, $date) {
     $stmt->close();
 }
 
-// Fonction pour supprimer une actualité de la base de données
-public function supprimerActualité($actId) {
-    $stmt = $this->db->prepare("DELETE FROM Actualité WHERE id = ?");
-    $stmt->bind_param("i", $actId);
+public function supprimerActualite($actualiteId) {
+    $stmt = $this->db->prepare("DELETE FROM actualité WHERE id = ?");
+    $stmt->bind_param("i", $actualiteId);
     $stmt->execute();
     $stmt->close();
 }
-
 }
 
 

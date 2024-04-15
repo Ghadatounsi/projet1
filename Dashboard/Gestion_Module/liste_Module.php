@@ -56,7 +56,7 @@
                             <tr>
                                 <th scope="col">ID</th>
                                 <th scope="col">Titre</th>
-                                <th scope="col">Description</th>
+                                <th scope="col">Discription</th>
                                 <th scope="col">Actions</th> <!-- Nouvelle colonne pour les actions -->
                             </tr>
                         </thead>
