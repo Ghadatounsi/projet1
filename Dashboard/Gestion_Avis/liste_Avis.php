@@ -83,19 +83,7 @@
                 echo "<td>" . $row["note"] . "</td>";         
                 echo "<td>" . $row["date"] . "</td>";
                 echo "<td>";
-                echo "<form action='modifier_avis.php?id=" . $row['id'] . "' method='post'>";
-                echo "<input type='hidden' name='avis_id' value='" . $row['id'] . "'>";
-                echo "<button type='submit' class='btn btn-primary'><i class='fa fa-pencil' aria-hidden='true'></i>
-                Modifier</button>";
-                echo "</form>";
-                echo "<form action='../Controller/supprimer_avis.php' method='post'>";
-                echo "<input type='hidden' name='supprimer_avis' value='1'>";
-                echo "<input type='hidden' name='avis_id' value='" . $row['id'] . "'>";
-                echo "<button type='submit' class='btn btn-danger'><i class='fa fa-trash' aria-hidden='true'></i>
-                </button>";
-                echo "</form>";
-                echo "</td>";
-                echo "</tr>";
+              
             }
         } else {
             echo "<tr><td colspan='9'>Aucun résultat trouvé</td></tr>";
