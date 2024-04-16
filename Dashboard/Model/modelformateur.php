@@ -20,13 +20,13 @@ class FormateurModel {
         }
     }
 
-    // Fonction pour ajouter un formateur à la base de données
-    public function ajouterFormateur($nom, $prenom, $specialisation, $biographe) {
-        $stmt = $this->db->prepare("INSERT INTO formateur (nom, prenom, specialisation, biographe) VALUES (?, ?, ?, ?)");
-        $stmt->bind_param("ssss", $nom, $prenom, $specialisation, $biographe);
+    public function ajouterFormateur($nom, $prenom, $specialisation, $biographe, $imagePath) {
+        $stmt = $this->db->prepare("INSERT INTO formateur (nom, prenom, specialisation, biographe, image_path) VALUES (?, ?, ?, ?, ?)");
+        $stmt->bind_param("sssss", $nom, $prenom, $specialisation, $biographe, $imagePath);
         $stmt->execute();
         $stmt->close();
     }
+    
 
     // Fonction pour récupérer tous les formateurs de la base de données
     public function getAllFormateurs() {
@@ -50,6 +50,8 @@ class FormateurModel {
         $stmt->execute();
         $stmt->close();
     }
+
+    
 
     // Fonction pour supprimer un formateur de la base de données
     public function supprimerFormateur($formateurId) {

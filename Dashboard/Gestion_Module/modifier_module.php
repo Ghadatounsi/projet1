@@ -78,7 +78,7 @@ $module = $moduleModel->getModuleById($id); // Supposons que vous ayez une méth
                     </div>
 
                     <!-- Submit button -->
-                    <button data-mdb-ripple-init type="submit" name="modifier_formation" class="btn btn-primary btn-block mb-4">Modifier</button>
+                    <button data-mdb-ripple-init type="submit" name="modifier_module" class="btn btn-primary btn-block mb-4">Modifier</button>
                 </form>
 
                 <div class="container-fluid">

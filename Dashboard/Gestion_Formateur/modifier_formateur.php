@@ -49,8 +49,10 @@ $formateur = $formateurModel->getFormateurById($id); // Supposons que vous ayez 
             <!-- Main Content -->
             <div id="content">
                 <?php include("../include/header.php"); ?>
-    <form style="padding-left:5%;padding-right:5%" method="post" action="../Controller/ajouter_formateur.php">
-    <div class="row mb-4">
+    <form style="padding-left:5%;padding-right:5%" method="post" action="../Controller/modifier_formateur.php">
+      <div class="row mb-4">
+       <input type="hidden" name="id" value="<?php echo $id; ?>">
+
         <div class="col">
             <div data-mdb-input-init class="form-outline">
                 <label class="form-label" for="form6Example1">Nom</label>
