@@ -18,7 +18,7 @@
 </div>
 <?php
 // Redirect browser
-header("Location: http://localhost/projet1/src/acceuil.php");
+header("Location: http://localhost/projet1/Frontend/index.php");
 // Make sure that code execution stops after the redirect
 exit;
 ?>
