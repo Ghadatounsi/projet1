@@ -48,62 +48,68 @@ $formationModel = new FormationModel();
 
 
                 <!-- Begin Page Content -->
-                <form style="padding-left:5%;padding-right:5%" method="post" action="../Controller/ajouter_formation.php">
-                    <div class="row mb-4">
-                        <div class="col">
-                            <div data-mdb-input-init class="form-outline">
-                                <label class="form-label" for="form6Example1">Titre</label>
-                                <input type="text" name="titre" id="form6Example1" class="form-control" />
-                            </div>
-                        </div>
-                        <div class="col">
-                            <label class="form-label" for="form6Example2">Description </label>
-                            <div data-mdb-input-init class="form-outline">
-                                <input type="text" name="description" id="form6Example2" class="form-control" />
-                            </div>
-                        </div>
-                    </div>
+<form style="padding-left:5%;padding-right:5%" method="post" action="../Ajouter_image/insert.php" enctype="multipart/form-data">
+    <div class="row mb-4">
+        <div class="col">
+            <div data-mdb-input-init class="form-outline">
+                <label class="form-label" for="form6Example1">Titre</label>
+                <input type="text" name="titre" id="form6Example1" class="form-control" />
+            </div>
+        </div>
+        <div class="col">
+            <label class="form-label" for="form6Example2">Description </label>
+            <div data-mdb-input-init class="form-outline">
+                <input type="text" name="description" id="form6Example2" class="form-control" />
+            </div>
+        </div>
+    </div>
 
-                    <!-- Text input -->
-                    <div data-mdb-input-init class="form-outline mb-4">
-                        <label class="form-label" for="form6Example3">Objectif</label>
-                        <input type="text" name="objectif" id="form6Example3" class="form-control" />
-                    </div>
+    <!-- Text input -->
+    <div data-mdb-input-init class="form-outline mb-4">
+        <label class="form-label" for="form6Example3">Objectif</label>
+        <input type="text" name="objectif" id="form6Example3" class="form-control" />
+    </div>
 
-                    <!-- Message input -->
-                    <label class="form-label" for="form6Example4">Programme </label>
-                    <div data-mdb-input-init class="form-outline mb-4">
-                        <textarea class="form-control" name="programme" id="form6Example4" rows="4"></textarea>
-                    </div>
+    <!-- Message input -->
+    <label class="form-label" for="form6Example4">Programme </label>
+    <div data-mdb-input-init class="form-outline mb-4">
+        <textarea class="form-control" name="programme" id="form6Example4" rows="4"></textarea>
+    </div>
 
-                    <div class="mb-3">
-                        <div class="input-group">
-                            <!-- Durée input -->
-                            <label class="form-label" for="form6Example5">Durée</label>
-                            <input type="text" name="duree" id="form6Example5" class="form-control" style="margin-left:3%" />
+    <div class="mb-3">
+        <div class="input-group">
+            <!-- Durée input -->
+            <label class="form-label" for="form6Example5">Durée</label>
+            <input type="text" name="durée" id="form6Example5" class="form-control" style="margin-left:3%" />
 
-                            <!-- Prix  input -->
-                            <label for="prixInput" class="form-label">Prix</label>
-                            <input type="number" name="prix" class="form-control" id="prixInput" placeholder="Entrez le prix" style="margin-left:3%">
-                            <span class="input-group-text">TND</span>
+            <!-- Prix  input -->
+            <label for="prixInput" class="form-label">Prix</label>
+            <input type="number" name="prix" class="form-control" id="prixInput" placeholder="Entrez le prix" style="margin-left:3%">
+            <span class="input-group-text">TND</span>
 
-                            <!-- Date input -->
-                            <label class="form-label" for="form6Example7">Date</label>
-                            <input type="date" name="date" id="form6Example7" class="form-control" style="margin-left:1%" min="2022-01-01"/>
+            <!-- Date input -->
+            <label class="form-label" for="form6Example7">Date</label>
+            <input type="date" name="date" id="form6Example7" class="form-control" style="margin-left:1%" min="2022-01-01"/>
 
-                          </div>
-                    </div>
+            <!-- Image input -->
+            
+        </div>
+    </div>
+    <label class="form-label" for="form6Example8">Image</label>
+    <div data-mdb-input-init class="form-outline mb-4">
+            <input type="file" name="image" class="form-control" id="form6Example8" style="margin-left:1%"/>
+    </div>
 
-                   
-                    <!-- Checkbox -->
-                    <div class="form-check d-flex justify-content-center mb-4">
-                        <input class="form-check-input me-2" type="checkbox" value="" id="form6Example8" checked />
-                        <label class="form-check-label" for="form6Example8"> Create an account? </label>
-                    </div>
+    <!-- Checkbox -->
+    <div class="form-check d-flex justify-content-center mb-4">
+        <input class="form-check-input me-2" type="checkbox" value="" id="form6Example9" checked />
+        <label class="form-check-label" for="form6Example9"> Create an account? </label>
+    </div>
 
-                    <!-- Submit button -->
-                    <button data-mdb-ripple-init type="submit" name="ajouter_formation" class="btn btn-primary btn-block mb-4">Place order</button>
-                </form>
+    <!-- Submit button -->
+    <button data-mdb-ripple-init type="submit" name="ajouter_formation" class="btn btn-primary btn-block mb-4">Place order</button>
+</form>
+
 
                 <div class="container-fluid">
                     <!-- /.container-fluid -->

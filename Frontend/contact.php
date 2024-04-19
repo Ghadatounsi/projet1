@@ -21,7 +21,7 @@
 		<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
 		<link href="css/tiny-slider.css" rel="stylesheet">
 		<link href="css/style.css" rel="stylesheet">
-		<title>Furni Free Bootstrap 5 Template for Furniture and Interior Design Websites by Untree.co </title>
+		<title>GT0.1 </title>
 	</head>
 
 	<body>
@@ -32,7 +32,7 @@
 		<!-- End Header/Navigation -->
 
 		<!-- Start Hero Section -->
-			<div class="hero">
+			<div class="hero" style="background-color: #181818 ;!important">
 				<div class="container">
 					<div class="row justify-content-between">
 						<div class="col-lg-5">
@@ -43,8 +43,8 @@
 							</div>
 						</div>
 						<div class="col-lg-7">
-							<div class="hero-img-wrap">
-								<img src="images/couch.png" class="img-fluid">
+            <div class="hero-img-wrap">
+								<img src="images/men.png" class="img-fluid" width="55%" style="top: -97px !important;">
 							</div>
 						</div>
 					</div>
@@ -99,7 +99,7 @@
                       </svg>
                     </div> <!-- /.icon -->
                     <div class="service-contents">
-                      <p>+1 294 3925 3939</p>
+                      <p>+216</p>
                     </div> <!-- /.service-contents-->
                   </div> <!-- /.service -->
                 </div>
@@ -109,19 +109,19 @@
                 <div class="row">
                   <div class="col-6">
                     <div class="form-group">
-                      <label class="text-black" for="fname">First name</label>
+                      <label class="text-black" for="fname">Prénom</label>
                       <input type="text" class="form-control" id="fname">
                     </div>
                   </div>
                   <div class="col-6">
                     <div class="form-group">
-                      <label class="text-black" for="lname">Last name</label>
+                      <label class="text-black" for="lname">Nom</label>
                       <input type="text" class="form-control" id="lname">
                     </div>
                   </div>
                 </div>
                 <div class="form-group">
-                  <label class="text-black" for="email">Email address</label>
+                  <label class="text-black" for="email">Email</label>
                   <input type="email" class="form-control" id="email">
                 </div>
 
@@ -130,7 +130,7 @@
                   <textarea name="" class="form-control" id="message" cols="30" rows="5"></textarea>
                 </div>
 
-                <button type="submit" class="btn btn-primary-hover-outline">Send Message</button>
+                <button type="submit" class="btn btn-primary-hover-outline">Envoyer le Message</button>
               </form>
 
             </div>

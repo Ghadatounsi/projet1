@@ -24,7 +24,7 @@
 		<!-- End Header/Navigation -->
 
 		<!-- Start Hero Section -->
-			<div class="hero">
+			<div class="hero" style="background-color: #181818 ;!important">
 				<div class="container">
 					<div class="row justify-content-between">
 						<div class="col-lg-5">
@@ -249,7 +249,7 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-lg-7 mx-auto text-center">
-						<h2 class="section-title">Testimonials</h2>
+						<h2 class="section-title">Avis</h2>
 					</div>
 				</div>
 

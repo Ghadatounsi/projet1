@@ -21,7 +21,7 @@
 		<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
 		<link href="css/tiny-slider.css" rel="stylesheet">
 		<link href="css/style.css" rel="stylesheet">
-		<title>GT0.1 </title>
+		<title>GT0.1</title>
 	</head>
 
 	<body>
@@ -31,7 +31,7 @@
 		<!-- End Header/Navigation -->
 
 		<!-- Start Hero Section -->
-			<div class="hero">
+			<div class="hero" style="background-color: #181818 ;!important">
 				<div class="container">
 					<div class="row justify-content-between">
 						<div class="col-lg-5">
@@ -42,8 +42,8 @@
 							</div>
 						</div>
 						<div class="col-lg-7">
-							<div class="hero-img-wrap">
-								<img src="images/couch.png" class="img-fluid">
+						    <div class="hero-img-wrap">
+								<img src="images/men.png" class="img-fluid" width="55%" style="top: -97px !important;">
 							</div>
 						</div>
 					</div>
