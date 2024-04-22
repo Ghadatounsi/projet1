@@ -40,7 +40,7 @@
                 <!-- End of Topbar -->
 
                 <!-- Begin Page Content -->
-<form style="padding-left:5%;padding-right:5%" method="POST" action="../Controller/ajouter_utilisateur.php">
+<form style="padding-left:5%;padding-right:5%" method="post" action="../Ajouter_image3/insert.php" enctype="multipart/form-data">
     <div class="row mb-4">
         <div class="col">
             <div data-mdb-input-init class="form-outline">
@@ -66,6 +66,12 @@
     <div data-mdb-input-init class="form-outline mb-4">
         <label class="form-label" for="motdepasse">Mot de passe</label>
         <input type="password" name="motdepasse" id="motdepasse" class="form-control" />
+    </div>
+
+
+    <label class="form-label" for="form6Example5"></label>
+     <div data-mdb-input-init class="form-outline mb-4">
+        <input type="file" name="image" class="form-control" id="form6Example5" style="margin-left:1%"/>
     </div>
 
    

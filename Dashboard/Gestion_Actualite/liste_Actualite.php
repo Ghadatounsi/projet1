@@ -60,6 +60,8 @@
                                     echo "<td>" . $row["titre"] . "</td>";
                                     echo "<td>" . $row["contenu"] . "</td>";
                                     echo "<td>" . $row["date"] . "</td>";
+                                    echo "<td><img src='../upload/".$row["image"]."' style='max-width: 100px;'></td>";
+
                                     echo "<td>";
                                     echo "<form action='modifier_Actualite.php?id=" . $row['id'] . "' method='post'>";
                                     echo "<input type='hidden' name='actualite_id' value='" . $row['id'] . "'>";

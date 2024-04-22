@@ -43,8 +43,7 @@
                 <!-- End of Topbar -->
 
                 <!-- Begin Page Content -->
-<form style="padding-left:5%;padding-right:5%" method="POST" action="../Controller/ajouter_Actualite.php">
-    <div class="row mb-4">
+                <form style="padding-left:5%;padding-right:5%" method="post" action="../Ajouter_image4/insert.php" enctype="multipart/form-data">    <div class="row mb-4">
         <div class="col">
             <div data-mdb-input-init class="form-outline">
                 <label class="form-label" for="form6Example1">Titre</label>
@@ -64,6 +63,12 @@
             <label class="form-label" for="form6Example7">Date</label>
             <input type="date" name="date" id="form6Example7" class="form-control" style="margin-left:1%" />
         </div>
+    </div>
+
+    
+    <label class="form-label" for="form6Example8">Image</label>
+    <div data-mdb-input-init class="form-outline mb-4">
+            <input type="file" name="image" class="form-control" id="form6Example8" style="margin-left:1%"/>
     </div>
 
     <!-- Submit button -->

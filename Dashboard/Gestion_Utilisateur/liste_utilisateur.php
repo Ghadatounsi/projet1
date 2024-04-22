@@ -84,6 +84,7 @@ $result = $conn->query($sql);
                                     echo "<td>" . $row["prenom"] . "</td>";
                                     echo "<td>" . $row["email"] . "</td>";
                                     echo "<td>" . $row["motdepasse"] . "</td>";
+                                    echo "<td><img src='../upload/".$row["image"]."' style='max-width: 100px;'></td>";
                                     echo "<td>";
                                     echo "<form action='http://localhost/projet1/dashboard/Gestion_Utilisateur/modifier_utilisateur.php?id=" . $row['id'] . "' method='post'>";
                                     echo "<input type='hidden' name='utilisateur_id' value='" . $row['id'] . "'>";

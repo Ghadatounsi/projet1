@@ -52,7 +52,7 @@ $utilisateur = $UtilisateurModel->getUtilisateurById($id); // Supposons que vous
 
 
                 <!-- Begin Page Content -->
-                <form style="padding-left:5%;padding-right:5%" method="post" action="../Controller/modifier_formation.php">
+                <form style="padding-left:5%;padding-right:5%" method="post" action="../Ajouter_image3/modifier_utilisateur.php">
                     <div class="row mb-4">
                     <input type="hidden" name="id" value="<?php echo $id; ?>">
 

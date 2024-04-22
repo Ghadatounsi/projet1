@@ -82,7 +82,9 @@
                                             echo "<td>" . $row["prenom"] . "</td>";
                                             echo "<td>" . $row["specialisation"] . "</td>";
                                             echo "<td>" . $row["biographe"] . "</td>";
+                                            echo "<td><img src='../upload/".$row["image"]."' style='max-width: 100px;'></td>";
                                             echo "<td>";
+                                
                                             echo "<form action='modifier_formateur.php?id=" . $row['id'] . "' method='post'>";
                                             echo "<input type='hidden' name='formateur_id' value='" . $row['id'] . "'>";
                                             echo "<button type='submit' class='btn btn-primary'><i class='fa fa-pencil' aria-hidden='true'></i> 

@@ -49,7 +49,7 @@ $formateur = $formateurModel->getFormateurById($id); // Supposons que vous ayez 
             <!-- Main Content -->
             <div id="content">
                 <?php include("../include/header.php"); ?>
-    <form style="padding-left:5%;padding-right:5%" method="post" action="../Controller/modifier_formateur.php">
+        <form style="padding-left:5%;padding-right:5%" method="POST" action="../Ajouter_image2/modifier_formateur.php">
       <div class="row mb-4">
        <input type="hidden" name="id" value="<?php echo $id; ?>">
 
@@ -77,6 +77,9 @@ $formateur = $formateurModel->getFormateurById($id); // Supposons que vous ayez 
         <textarea name="biographe" class="form-control" id="form6Example4" rows="4"></textarea>
     </div>
 
+
+    <label class="form-label" for="imageInput">Image</label>
+            <input type="file" name="image" class="form-control" id="imageInput" style="margin-left:1%" accept="image/*" />
 
 
                     <!-- Checkbox -->

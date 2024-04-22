@@ -23,5 +23,11 @@ class FormationModel {
         $stmt->execute();
         $stmt->close();
     }
+    public function updateFormation($formation_id, $titre, $description, $objectif, $programme, $durée, $prix, $date) {
+        $stmt = $this->db->prepare("UPDATE formation SET titre=?, description=?, objectif=?, programme=?, durée=?, prix=?, date=? WHERE id=?");
+        $stmt->bind_param("ssssiddi", $titre, $description, $objectif, $programme, $durée, $prix, $date, $formation_id);
+        $stmt->execute();
+        $stmt->close();
+    }
 }
 ?>

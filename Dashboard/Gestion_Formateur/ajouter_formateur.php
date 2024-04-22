@@ -47,7 +47,7 @@ $formateurModel = new FormateurModel();
 
 
                 <!-- Begin Page Content -->
-                <form style="padding-left:5%;padding-right:5%" method="post" action="../Controller/ajouter_formateur.php">
+                <form style="padding-left:5%;padding-right:5%" method="post" action="../Ajouter_image2/insert.php" enctype="multipart/form-data">
                     <div class="row mb-4">
                         <div class="col">
                             <div data-mdb-input-init class="form-outline">
@@ -70,10 +70,19 @@ $formateurModel = new FormateurModel();
                     </div>
 
                     <!-- Message input -->
-                    <label class="form-label" for="form6Example4">Biographie </label>
-                    <div data-mdb-input-init class="form-outline mb-4">
-                        <textarea class="form-control" name="biographie" id="form6Example4" rows="4"></textarea>
+                    <div class="mb-3">
+    <div data-mdb-input-init class="form-outline">
+        <label class="form-label" for="form6Example3">Biographe</label>
+        <textarea name="biographe" id="form6Example3" class="form-control"></textarea>
+    </div>
+</div>
+
+
                     </div>
+                   <label class="form-label" for="form6Example5"></label>
+                   <div data-mdb-input-init class="form-outline mb-4">
+                      <input type="file" name="image" class="form-control" id="form6Example5" style="margin-left:1%"/>
+                     </div>
 
                     <!-- Checkbox -->
                     <div class="form-check d-flex justify-content-center mb-4">

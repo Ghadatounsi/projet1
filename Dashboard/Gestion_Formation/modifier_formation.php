@@ -52,10 +52,9 @@ $formation = $formationModel->getFormationById($id); // Supposons que vous ayez 
 
 
                 <!-- Begin Page Content -->
-                <form style="padding-left:5%;padding-right:5%" method="post" action="../Controller/modifier_formation.php">
+                <form style="padding-left:5%;padding-right:5%" method="POST" action="../Ajouter_image/modifier_formation.php">
                     <div class="row mb-4">
                     <input type="hidden" name="id" value="<?php echo $id; ?>">
-
                         <div class="col">
                             <div data-mdb-input-init class="form-outline">
                                 <label class="form-label" for="form6Example1">Titre</label>
@@ -97,10 +96,12 @@ $formation = $formationModel->getFormationById($id); // Supposons que vous ayez 
                             <label class="form-label" for="form6Example7">Date</label>
                             <?php  $date = date('Y-m-d', strtotime($formation['date']));?>
                             <input type="date" name="date" id="form6Example7" class="form-control" style="margin-left:1%"  value="<?php echo $date; ?>" />
-
-
+                             <!-- Image input -->
+          
                         </div>
                     </div>
+                    <label class="form-label" for="imageInput">Image</label>
+            <input type="file" name="image" class="form-control" id="imageInput" style="margin-left:1%" accept="image/*" />
 
 
                     <!-- Checkbox -->
