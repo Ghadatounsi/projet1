@@ -18,11 +18,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['login'])) {
     if ($user) {
         $id = $user['id'];
         // L'utilisateur est connecté avec succès, vous pouvez rediriger vers une autre page par exemple
-        header("Location: http://localhost/projet1/dashboard/index.php?id=$id");
+        header("Location: http://localhost/projet1/dashboard/dashboard.php?id=$id");
         exit(); // Terminer le script
     } else {
         // Afficher un message d'erreur par exemple
-        header('Location: http://localhost/projet1/dashboard/login.php');
+        header('Location: http://localhost/projet1/dashboard/index.php');
         $error = "Email ou mot de passe incorrect";
     }
 }

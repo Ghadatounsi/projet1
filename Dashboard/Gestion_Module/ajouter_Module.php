@@ -43,7 +43,7 @@
                 <!-- End of Topbar -->
 
 <!-- Begin Page Content -->
-<form style="padding-left:5%;padding-right:5%" method="post" action="../Ajouter_imagemodule/insert.php" enctype="multipart/form-data">
+<form style="padding-left:5%;padding-right:5%" method="post" action="../Controller/ajouter_module.php" enctype="multipart/form-data">
   <div class="row mb-4">
     <div class="col">
       <div data-mdb-input-init class="form-outline">
@@ -58,10 +58,7 @@
       </div>
     </div>
   </div>
-  <label class="form-label" for="form6Example3">Image</label>
-    <div data-mdb-input-init class="form-outline mb-4">
-            <input type="file" name="image" class="form-control" id="form6Example3" style="margin-left:1%"/>
-    </div>
+  
 
 
 

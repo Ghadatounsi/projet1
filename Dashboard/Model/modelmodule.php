@@ -24,7 +24,7 @@ class ModuleModel {
     // Fonction pour ajouter un module à la base de données
     public function ajouterModule($titre, $discription) {
         $stmt = $this->db->prepare("INSERT INTO module (titre, discription) VALUES (?, ?)");
-        $stmt->bind_param("ss", $titre, $description);
+        $stmt->bind_param("ss", $titre, $discription);
         $stmt->execute();
         $stmt->close();
     }

@@ -51,9 +51,9 @@
 
 					<!-- Start Column 1 -->
 					<div class="col-md-12 col-lg-3 mb-5 mb-lg-0">
-						<h2 class="mb-4 section-title">Crafted with excellent material.</h2>
-						<p class="mb-4">Donec vitae odio quis nisl dapibus malesuada. Nullam ac aliquet velit. Aliquam vulputate velit imperdiet dolor tempor tristique. </p>
-						<p><a href="shop.html" class="btn">Explore</a></p>
+						<h2 class="mb-4 section-title">Présentation de l'Équipe : </h2>
+						<p class="mb-4">Découvrez notre équipe engagée à vous offrir une expérience de formation exceptionnelle. Nous sommes là pour vous aider à chaque étape de votre parcours d'apprentissage </p>
+						<p><a href="shop.html" class="btn">Explorer</a></p>
 					</div> 
 					<!-- End Column 1 -->
 

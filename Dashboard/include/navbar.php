@@ -2,7 +2,7 @@
  <ul class="navbar-nav bg-dark  sidebar sidebar-dark accordion" id="accordionSidebar">
 
 <!-- Sidebar - Brand -->
-<a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+<a class="sidebar-brand d-flex align-items-center justify-content-center" href="http://localhost/projet1/dashboard/dashboard.php">
     <div class="sidebar-brand-icon rotate-n-15">
     <i class="fa fa-certificate" ></i>
     </div>
@@ -14,7 +14,7 @@
 
 <!-- Nav Item - Dashboard -->
 <li class="nav-item active">
-    <a class="nav-link" href="http://localhost/projet1/dashboard/index.php">
+    <a class="nav-link" href="http://localhost/projet1/dashboard/dashboard.php">
         <i class="fas fa-fw fa-tachometer-alt"></i>
         <span>Dashboard</span></a>
 </li>
@@ -126,7 +126,7 @@
     <div id="collapseSix" class="collapse" aria-labelledby="headingSix" data-parent="#accordionSidebar">
         <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">Gestion Actualite</h6>
-            <a class="collapse-item" href="http://localhost/projet1/dashboard/Gestion_Actualite/ajouter_Actualite.php">Ajouter De Actualite</a>
+            <a class="collapse-item" href="http://localhost/projet1/dashboard/Gestion_Actualite/ajouter-actualite.php">Ajouter De Actualite</a>
             <a class="collapse-item" href="http://localhost/projet1/dashboard/Gestion_Actualite/liste_Actualite.php">Liste Des Actualite</a>
         </div>
     </div>
