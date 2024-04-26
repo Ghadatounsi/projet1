@@ -1,0 +1,61 @@
+/* stylee.css */
+
+/* Réinitialisation des marges et des rembourrages */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Style de la barre de navigation */
+nav {
+    background-color: #000000; /* Couleur de fond de la navbar */
+    display: flex;
+    justify-content: space-between; /* Alignement des éléments de la barre de navigation */
+    align-items: center; /* Centrer verticalement les éléments */
+
+}
+
+/* Style de la liste non ordonnée */
+nav ul {
+    list-style-type: none; /* Suppression des puces */
+    display: flex; /* Affichage en ligne des éléments de la liste */
+}
+
+/* Style des éléments de liste */
+nav ul li {
+    margin-right: 20px; /* Marge entre les éléments de liste */
+}
+
+/* Style des liens */
+nav ul li a {
+    text-decoration: none; /* Suppression du soulignement du lien */
+    color: #afa4a4; /* Couleur du texte des liens */
+    padding: 10px; /* Rembourrage des liens */
+}
+
+/* Style des liens au survol */
+nav ul li a:hover {
+    background-color: #ebad05; /* Couleur de fond au survol */
+}
+
+nav ul.login {
+    margin-left: auto; /* Déplace la liste de connexion vers la droite */
+}
+
+nav ul.login li {
+    list-style-type: none; /* Suppression des puces */
+}
+
+nav ul.login li a {
+    text-decoration: none; /* Suppression du soulignement du lien */
+    color: #fff; /* Couleur du texte */
+    display: flex; /* Affichage en ligne des éléments */
+    align-items: center; /* Centrer verticalement les éléments */
+    margin-right: 20px; /* Marge entre les éléments */
+}
+
+nav ul.login li a img {
+    width: 20px; /* Taille de l'icône de connexion */
+    margin-right: 5px; /* Marge entre l'icône et le texte */
+}

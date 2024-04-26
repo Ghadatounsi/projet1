@@ -1,5 +1,18 @@
+<?php
+// Démarrer la session
+session_start();
 
-2<!DOCTYPE html>
+// Vérifier si l'utilisateur est connecté
+if(isset($_SESSION['user_id'])) {
+    // Récupérer l'ID de l'utilisateur depuis la session
+    $userId = $_SESSION['user_id'];
+} else {
+    // L'utilisateur n'est pas connecté, rediriger vers la page de connexion
+    header("Location: http://localhost/projet1/Frontend/index.php");
+    exit(); // Terminer le script
+}
+?>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
