@@ -113,8 +113,7 @@ $conn->close();
         <input type="email" class="form-control" id="email_candidat" name="email_candidat" value="<?php echo $row_candidat['email']; ?>" required>
       </div>
       <div class="form-group">
-        <label for="id_formation">Identifiant de la formation</label>
-        <input type="text" class="form-control" id="id_formation" name="id_formation" value="<?php echo $row_formation['id']; ?>" required>
+        <input type="hidden" class="form-control" id="id_formation" name="id_formation" value="<?php echo $row_formation['id']; ?>" required>
       </div>
       <div class="form-group">
         <label for="titre_formation">Titre de la formation</label>
@@ -127,6 +126,10 @@ $conn->close();
       <div class="form-group">
         <label for="prix_formation">Prix de la formation</label>
         <input type="number" step="0.01" class="form-control" id="prix_formation" name="prix_formation" value="<?php echo $row_formation['prix']; ?>" required>
+      </div>
+      <div class="form-group">
+      
+        <input type="hidden" class="form-control" id="statut" name="statut" value="en_attente" required>
       </div>
       <button type="submit" class="btn btn-primary">S'inscrire</button>
     </form>

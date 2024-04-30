@@ -20,14 +20,17 @@ $inscriptionModel = new Inscription_model($conn);
 
 // Récupération des données du formulaire
 $id_candidat = $_POST['id_candidat'];
+$username_candidat = $_POST['username_candidat'];
+$email_candidat = $_POST['email_candidat'];
 $id_formation = $_POST['id_formation'];
 $titre_formation = $_POST['titre_formation'];
 $duree_formation = $_POST['durée_formation'];
-$username_candidat = $_POST['username_candidat'];
-$email_candidat = $_POST['email_candidat'];
+$prix_formation = $_POST['prix_formation'];
+$statut = $_POST['statut'];
+$date_inscription = date("Y-m-d");
 
 // Appel de la méthode pour créer une inscription
-$result = $inscriptionModel->create_inscription($id_candidat, $id_formation, $titre_formation, $duree_formation, $username_candidat, $email_candidat);
+$result = $inscriptionModel->create_inscription($id_candidat, $username_candidat, $email_candidat, $id_formation, $titre_formation, $duree_formation,$prix_formation,$statut,$date_inscription);
 
 if ($result) {
     header('Location: http://localhost/projet1/Frontend/inscription.php');
