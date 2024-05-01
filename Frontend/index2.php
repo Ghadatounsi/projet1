@@ -12,6 +12,7 @@ if(isset($_SESSION['user_id'])) {
     exit(); // Terminer le script
 }
 ?>
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -28,13 +29,13 @@ if(isset($_SESSION['user_id'])) {
 		<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
 		<link href="css/tiny-slider.css" rel="stylesheet">
 		<link href="css/style.css" rel="stylesheet">
-		<title>Actualités</title>
+		<title>GT0.1 </title>
 	</head>
 
 	<body>
 
 		<!-- Start Header/Navigation -->
-		<?php include("include/navbar.php") ?>
+        <?php include("include/navbar.php") ?>
 		<!-- End Header/Navigation -->
 
 		<!-- Start Hero Section -->
@@ -43,64 +44,54 @@ if(isset($_SESSION['user_id'])) {
 					<div class="row justify-content-between">
 						<div class="col-lg-5">
 							<div class="intro-excerpt">
-								<h1>Actualités</h1>
-								<p class="mb-4">Découvrez les dernières actualités et les événements à venir. Restez informé des nouvelles tendances, des mises à jour et des annonces importantes de notre entreprise.</p>
+								<h1> "Explorez nos Formations Modernes"<span clsas="d-block"></span></h1>
+								<p class="mb-4">Découvrez nos programmes modernes et enrichissants conçus pour stimuler votre créativité et développer vos compétences</p>
 								<p><a href="" class="btn btn-secondary me-2">S'inscrire maintenant</a><a href="#" class="btn btn-white-outline">Découvrir</a></p>
 							</div>
 						</div>
 						<div class="col-lg-7">
-						    <div class="hero-img-wrap">
-								<img src="images/men.png" class="img-fluid" width="55%" style="top: -97px !important;">
+							<div class="hero-img-wrap">
+								<img src="images/men.png" class="img-fluid" width="55%">
 							</div>
 						</div>
 					</div>
 				</div>
 			</div>
 		<!-- End Hero Section -->
-		<?php
-include("../Dashboard/include/connect.php");
-// Requête SQL pour récupérer les données de la table "Actualite"
-$sql = "SELECT * FROM actualité";
-$result = $conn->query($sql);
-?>
 
-<div class="untree_co-section product-section before-footer-section">
-    <div class="container">
-        <div class="row">
-            <?php
-            // Vérifier s'il y a des résultats
-            if ($result->num_rows > 0) {
-                // Afficher les données de chaque ligne
-                while ($row = $result->fetch_assoc()) {
-                    ?>
-                    <div class="col-12 col-md-4 col-lg-3 mb-5">
-                        <a class="product-item" href="#">
-                            <img src="http://localhost/projet1/dashboard/upload/<?php echo $row["image"]; ?>" class="img-fluid product-thumbnail">
-                            <h3 class="product-title"><?php echo $row["titre"]; ?></h3>
-                            <p><?php echo $row["contenu"]; ?></p>
-                            <div class="meta">
-                                <span>Date: <?php echo $row["date"]; ?></span>
-                            </div>
-                        </a>
-                    </div>
-            <?php
-                }
-            } else {
-                echo "Aucune actualité trouvée";
-            }
-            ?>
-        </div>
-    </div>
-</div>
+		<!-- Start Product Section -->
+		<?php include("include/product_section.php") ?>
+		<!-- End Product Section -->
 
-<?php
-// Fermer la connexion à la base de données
-$conn->close();
-?>
+		<!-- Start Why Choose Us Section -->
+		<?php include("include/why_choose_section.php") ?>
+
+		<!-- End Why Choose Us Section -->
+
+		<!-- Start We Help Section -->
+		<?php include("include/we_help_section.php") ?>
+
+		<!-- End We Help Section -->
+
+		<!-- Start Popular Product -->
+		<?php include("include/popular_product.php") ?>
+>
+		<!-- End Popular Product -->
+
+		<!-- Start Testimonial Slider -->
+		<?php include("include/testimonial_section.php") ?>
+
+		<!-- End Testimonial Slider -->
+
+		<!-- Start Blog Section -->
+		<?php include("include/blog_section.php") ?>
+
+		<!-- End Blog Section -->	
 
 		<!-- Start Footer Section -->
 		<?php include("include/footer.php") ?>
 		<!-- End Footer Section -->	
+
 
 		<script src="js/bootstrap.bundle.min.js"></script>
 		<script src="js/tiny-slider.js"></script>

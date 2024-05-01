@@ -3,39 +3,45 @@
 session_start();
 
 // Vérifier si l'utilisateur est connecté
-if(isset($_SESSION['user_id'])) {
-    // Récupérer l'ID de l'utilisateur depuis la session
-    $userId = $_SESSION['user_id'];
-} else {
+if(!isset($_SESSION['user_id'])) {
     // L'utilisateur n'est pas connecté, rediriger vers la page de connexion
     header("Location: http://localhost/projet1/Frontend/index.php");
     exit(); // Terminer le script
 }
+
+// Inclure le fichier de connexion à la base de données
+include("../include/connect.php");
+
+// Pagination
+$limit = 10; // Nombre de candidats par page
+$page = isset($_GET['page']) ? $_GET['page'] : 1;
+$start = ($page - 1) * $limit;
+
+// Requête SQL pour sélectionner les candidats avec pagination
+$sql = "SELECT * FROM inscription LIMIT $start, $limit";
+$result = $conn->query($sql);
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-
     <title>INIR - Liste des Inscriptions </title>
 
     <!-- Custom fonts for this template -->
     <link href="../vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
 
     <!-- Custom styles for this template -->
     <link href="../css/sb-admin-2.min.css" rel="stylesheet">
 
     <!-- Custom styles for this page -->
     <link href="../vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
-
 </head>
 
 <body id="page-top">
@@ -68,24 +74,17 @@ if(isset($_SESSION['user_id'])) {
                         <thead>
                             <tr>
                                 <th scope="col">ID</th>
-                                <th scope="col">id_candidat </th>
-                                <th scope="col">id_formation </th>
-                                <th scope="col">titre_formation</th> 
+                                <th scope="col">id_candidat</th>
+                                <th scope="col">id_formation</th>
+                                <th scope="col">titre_formation</th>
                                 <th scope="col">duree_formation</th>
                                 <th scope="col">username_candidat</th>
-                                <th scope="col">email_candidat</th> 
-                                <th scope="col">Actions</th> 
+                                <th scope="col">email_candidat</th>
+                                <th scope="col">Actions</th>
                             </tr>
                         </thead>
                         <tbody class="table-group-divider table-divider-color">
                             <?php
-                            // Connexion à la base de données
-                            include("../include/connect.php");
-
-                            // Requête SQL pour sélectionner toutes les lignes de la table 'candidat'
-                            $sql = "SELECT * FROM inscription";
-                            $result = $conn->query($sql);
-
                             if ($result->num_rows > 0) {
                                 // Afficher les données de chaque candidat
                                 while ($row = $result->fetch_assoc()) {
@@ -111,13 +110,28 @@ if(isset($_SESSION['user_id'])) {
                                     echo "</tr>";
                                 }
                             } else {
-                                echo "<tr><td colspan='4'>Aucun résultat trouvé</td></tr>";
+                                echo "<tr><td colspan='8'>Aucun résultat trouvé</td></tr>";
                             }
-                            // Fermer la connexion à la base de données
-                            $conn->close();
                             ?>
                         </tbody>
                     </table>
+
+                    <!-- Pagination -->
+                    <?php
+                    // Calculer le nombre total de pages
+                    $sql_count = "SELECT COUNT(id) AS total FROM inscription";
+                    $result_count = $conn->query($sql_count);
+                    $row_count = $result_count->fetch_assoc();
+                    $total_pages = ceil($row_count['total'] / $limit);
+
+                    // Afficher les liens de pagination
+                    echo "<ul class='pagination justify-content-center'>";
+                    for ($i = 1; $i <= $total_pages; $i++) {
+                        echo "<li class='page-item'><a class='page-link' href='liste_candidats.php?page=" . $i . "'>" . $i . "</a></li>";
+                    }
+                    echo "</ul>";
+                    ?>
+                    <!-- End Pagination -->
 
                 </div>
                 <!-- /.container-fluid -->
@@ -145,26 +159,6 @@ if(isset($_SESSION['user_id'])) {
     <a class="scroll-to-top rounded" href="#page-top">
         <i class="fas fa-angle-up"></i>
     </a>
-
-    <!-- Logout Modal-->
-    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-        aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
-                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">×</span>
-                    </button>
-                </div>
-                <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
-                <div class="modal-footer">
-                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                    <a class="btn btn-primary" href="login.html">Logout</a>
-                </div>
-            </div>
-        </div>
-    </div>
 
     <!-- Bootstrap core JavaScript-->
     <script src="../vendor/jquery/jquery.min.js"></script>

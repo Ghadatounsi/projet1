@@ -1,18 +1,3 @@
-<?php
-// Démarrer la session
-session_start();
-
-// Vérifier si l'utilisateur est connecté
-if(isset($_SESSION['user_id'])) {
-    // Récupérer l'ID de l'utilisateur depuis la session
-    $userId = $_SESSION['user_id'];
-} else {
-    // L'utilisateur n'est pas connecté, rediriger vers la page de connexion
-    header("Location: http://localhost/projet1/Frontend/login.php");
-    exit(); // Terminer le script
-}
-?>
-
 <!doctype html>
 <html lang="en">
 <head>
@@ -35,7 +20,7 @@ if(isset($_SESSION['user_id'])) {
 	<body>
 
 		<!-- Start Header/Navigation -->
-        <?php include("include/navbar.php") ?>
+        <?php include("include/navbar2.php") ?>
 		<!-- End Header/Navigation -->
 
 		<!-- Start Hero Section -->

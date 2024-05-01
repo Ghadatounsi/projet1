@@ -21,7 +21,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['login'])) {
         // L'utilisateur est connecté avec succès, stocker l'ID de l'utilisateur dans la session
         $_SESSION['user_id'] = $user['id'];
         // Rediriger vers une autre page par exemple
-        header("Location: http://localhost/projet1/Frontend/index.php?id=" . $user['id']);
+        header("Location: http://localhost/projet1/Frontend/index2.php?id=" . $user['id']);
         exit(); // Terminer le script
     } else {
         // Afficher un message d'erreur par exemple

@@ -8,7 +8,7 @@ if(isset($_SESSION['user_id'])) {
     $userId = $_SESSION['user_id'];
 } else {
     // L'utilisateur n'est pas connecté, rediriger vers la page de connexion
-    header("Location: http://localhost/projet1/Frontend/index.php");
+    header("Location: http://localhost/projet1/dashboard/index.php");
     exit(); // Terminer le script
 }
 ?>
