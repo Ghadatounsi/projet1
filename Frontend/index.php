@@ -36,7 +36,7 @@
 						</div>
 						<div class="col-lg-7">
 							<div class="hero-img-wrap">
-								<img src="images/men.png" class="img-fluid" width="55%">
+								<img src="images/.png" class="img-fluid" width="55%">
 							</div>
 						</div>
 					</div>

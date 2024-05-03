@@ -51,7 +51,7 @@ if(isset($_SESSION['user_id'])) {
 						</div>
 						<div class="col-lg-7">
             <div class="hero-img-wrap">
-								<img src="images/men.png" class="img-fluid" width="55%" style="top: -97px !important;">
+								<img src="images/.png" class="img-fluid" width="55%" style="top: -97px !important;">
 							</div>
 						</div>
 					</div>

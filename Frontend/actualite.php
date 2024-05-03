@@ -36,27 +36,27 @@ if(isset($_SESSION['user_id'])) {
 		<!-- Start Header/Navigation -->
 		<?php include("include/navbar.php") ?>
 		<!-- End Header/Navigation -->
+<!-- Start Hero Section -->
+<div class="hero" style="background-color: #181818 !important">
+    <div class="container">
+        <div class="row justify-content-between">
+            <div class="col-lg-5">
+                <div class="intro-excerpt">
+                    <h1>Actualités</h1>
+                    <p class="mb-4">Découvrez les dernières actualités et les événements à venir. Restez informé des nouvelles tendances, des mises à jour et des annonces importantes de notre entreprise.</p>
+                    <p><a href="" class="btn btn-secondary me-2">S'inscrire maintenant</a><a href="#" class="btn btn-white-outline">Découvrir</a></p>
+                </div>
+            </div>
+            <div class="col-lg-7">
+                <div class="hero-img-wrap">
+                    <img src="images/.png" class="img-fluid" width="100%">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End Hero Section -->
 
-		<!-- Start Hero Section -->
-			<div class="hero" style="background-color: #181818 ;!important">
-				<div class="container">
-					<div class="row justify-content-between">
-						<div class="col-lg-5">
-							<div class="intro-excerpt">
-								<h1>Actualités</h1>
-								<p class="mb-4">Découvrez les dernières actualités et les événements à venir. Restez informé des nouvelles tendances, des mises à jour et des annonces importantes de notre entreprise.</p>
-								<p><a href="" class="btn btn-secondary me-2">S'inscrire maintenant</a><a href="#" class="btn btn-white-outline">Découvrir</a></p>
-							</div>
-						</div>
-						<div class="col-lg-7">
-						    <div class="hero-img-wrap">
-								<img src="images/men.png" class="img-fluid" width="55%" style="top: -97px !important;">
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		<!-- End Hero Section -->
 		<?php
 include("../Dashboard/include/connect.php");
 // Requête SQL pour récupérer les données de la table "Actualite"
@@ -73,13 +73,17 @@ $result = $conn->query($sql);
                 // Afficher les données de chaque ligne
                 while ($row = $result->fetch_assoc()) {
                     ?>
-                    <div class="col-12 col-md-4 col-lg-3 mb-5">
-                        <a class="product-item" href="#">
-                            <img src="http://localhost/projet1/dashboard/upload/<?php echo $row["image"]; ?>" class="img-fluid product-thumbnail">
-                            <h3 class="product-title"><?php echo $row["titre"]; ?></h3>
-                            <p><?php echo $row["contenu"]; ?></p>
-                            <div class="meta">
-                                <span>Date: <?php echo $row["date"]; ?></span>
+                    <div class="col-12 col-md-4 col-lg-3 mb-4">
+                        <a class="product-item" href="#" style="text-decoration: none; color: inherit; transition: all 0.3s;">
+                            <div class="product-card" style="border-radius: 10px; overflow: hidden; box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);">
+                                <img src="http://localhost/projet1/dashboard/upload/<?php echo $row["image"]; ?>" class="img-fluid product-thumbnail" style="object-fit: cover; height: 200px; width: 100%;">
+                                <div class="product-info p-3">
+                                    <h3 class="product-title mb-0" style="font-size: 18px;"><?php echo $row["titre"]; ?></h3>
+                                    <p class="mb-2" style="font-size: 14px;"><?php echo $row["contenu"]; ?></p>
+                                    <div class="meta">
+                                        <span style="font-size: 12px;">Date: <?php echo $row["date"]; ?></span>
+                                    </div>
+                                </div>
                             </div>
                         </a>
                     </div>
@@ -92,6 +96,7 @@ $result = $conn->query($sql);
         </div>
     </div>
 </div>
+
 
 <?php
 // Fermer la connexion à la base de données

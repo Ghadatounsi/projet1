@@ -74,8 +74,6 @@ $result = $conn->query($sql);
                         <thead>
                             <tr>
                                 <th scope="col">ID</th>
-                                <th scope="col">id_candidat</th>
-                                <th scope="col">id_formation</th>
                                 <th scope="col">titre_formation</th>
                                 <th scope="col">duree_formation</th>
                                 <th scope="col">username_candidat</th>
@@ -90,8 +88,6 @@ $result = $conn->query($sql);
                                 while ($row = $result->fetch_assoc()) {
                                     echo "<tr>";
                                     echo "<td>" . $row["id"] . "</td>";
-                                    echo "<td>" . $row["id_candidat"] . "</td>";
-                                    echo "<td>" . $row["id_formation"] . "</td>";
                                     echo "<td>" . $row["titre_formation"] . "</td>";
                                     echo "<td>" . $row["duree_formation"] . "</td>";
                                     echo "<td>" . $row["username_candidat"] . "</td>";
