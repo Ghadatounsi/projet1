@@ -28,7 +28,7 @@ if(isset($_SESSION['user_id'])) {
 		<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
 		<link href="css/tiny-slider.css" rel="stylesheet">
 		<link href="css/style.css" rel="stylesheet">
-		<title>Actualités</title>
+		<title>GT0.1</title>
 	</head>
 
 	<body>
@@ -36,26 +36,25 @@ if(isset($_SESSION['user_id'])) {
 		<!-- Start Header/Navigation -->
 		<?php include("include/navbar.php") ?>
 		<!-- End Header/Navigation -->
-<!-- Start Hero Section -->
-<div class="hero" style="background-color: #181818 !important">
-    <div class="container">
-        <div class="row justify-content-between">
-            <div class="col-lg-5">
-                <div class="intro-excerpt">
-                    <h1>Actualités</h1>
-                    <p class="mb-4">Découvrez les dernières actualités et les événements à venir. Restez informé des nouvelles tendances, des mises à jour et des annonces importantes de notre entreprise.</p>
-                    <p><a href="" class="btn btn-secondary me-2">S'inscrire maintenant</a><a href="#" class="btn btn-white-outline">Découvrir</a></p>
-                </div>
-            </div>
-            <div class="col-lg-7">
-                <div class="hero-img-wrap">
-                    <img src="images/.png" class="img-fluid" width="100%">
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- End Hero Section -->
+	<!-- Start Hero Section -->
+    <div class="hero" style="background-color: #181818 ;!important">
+				<div class="container">
+					<div class="row justify-content-between">
+						<div class="col-lg-5">
+							<div class="intro-excerpt">
+								<h1>"Nos Actualités"</h1>
+							</div>
+						</div>
+						<div class="col-lg-7">
+						    <div class="hero-img-wrap">
+								<img src="images/men.png" class="img-fluid" width="37%%" style="top: -117px !important;">
+							</div>
+							
+						</div>
+					</div>
+				</div>
+			</div>
+		<!-- End Hero Section -->
 
 		<?php
 include("../Dashboard/include/connect.php");

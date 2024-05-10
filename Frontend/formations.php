@@ -1,4 +1,4 @@
-<<?php
+<?php
 // Démarrer la session
 session_start();
 
@@ -44,12 +44,12 @@ if(isset($_SESSION['user_id'])) {
 					<div class="row justify-content-between">
 						<div class="col-lg-5">
 							<div class="intro-excerpt">
-								<h1>Formations</h1>
+								<h1>"Nos Formations"</h1>
 							</div>
 						</div>
 						<div class="col-lg-7">
 						    <div class="hero-img-wrap">
-								<img src="images/.png" class="img-fluid" width="37%%" style="top: -117px !important;">
+								<img src="images/men.png" class="img-fluid" width="37%%" style="top: -117px !important;">
 							</div>
 							
 						</div>

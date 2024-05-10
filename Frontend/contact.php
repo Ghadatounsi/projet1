@@ -37,22 +37,20 @@ if(isset($_SESSION['user_id'])) {
 		<?php include("include/navbar.php") ?>
 
 		<!-- End Header/Navigation -->
-
-		<!-- Start Hero Section -->
-			<div class="hero" style="background-color: #181818 ;!important">
+	<!-- Start Hero Section -->
+  <div class="hero" style="background-color: #181818 ;!important">
 				<div class="container">
 					<div class="row justify-content-between">
 						<div class="col-lg-5">
 							<div class="intro-excerpt">
-								<h1>Contactez nous</h1>
-								<p class="mb-4">N'hésitez pas à nous contacter si vous avez des questions ou des besoins particuliers. Nous sommes là pour vous aider à trouver la solution la mieux adaptée à vos besoins</p>
-								<p><a href="" class="btn btn-secondary me-2">S'inscrire maintenant</a><a href="#" class="btn btn-white-outline">découvrir</a></p>
+								<h1>"Contactez nous"</h1>
 							</div>
 						</div>
 						<div class="col-lg-7">
-            <div class="hero-img-wrap">
-								<img src="images/.png" class="img-fluid" width="55%" style="top: -97px !important;">
+						    <div class="hero-img-wrap">
+								<img src="images/men.png" class="img-fluid" width="37%%" style="top: -117px !important;">
 							</div>
+							
 						</div>
 					</div>
 				</div>

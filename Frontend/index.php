@@ -14,7 +14,7 @@
 		<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
 		<link href="css/tiny-slider.css" rel="stylesheet">
 		<link href="css/style.css" rel="stylesheet">
-		<title>GT0.1 </title>
+		<title>GT0.1</title>
 	</head>
 
 	<body>
@@ -36,7 +36,7 @@
 						</div>
 						<div class="col-lg-7">
 							<div class="hero-img-wrap">
-								<img src="images/.png" class="img-fluid" width="55%">
+								<img src="images/men.png" class="img-fluid" width="55%">
 							</div>
 						</div>
 					</div>

@@ -19,13 +19,13 @@
 
     <!-- Custom styles for this template-->
     <link href="../Dashboard/css/sb-admin-2.min.css" rel="stylesheet">
-<style>
-    .bg-image {
-    background-image: url('assets/img/abcd.jpg');
-    /* Add other background properties as needed */
+    <style>
+     .bg-image {
+    background-image: url('Frontend/images/men2.jpg');
+    /* Autres propriétés de l'arrière-plan si nécessaire */
 }
 
-</style>
+    </style>
 </head>
 
 <body class="bg-gradient-dark">

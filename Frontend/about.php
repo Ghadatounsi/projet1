@@ -14,7 +14,7 @@
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
   <link href="css/tiny-slider.css" rel="stylesheet">
   <link href="css/style.css" rel="stylesheet">
-  <title>GT0.1 </title>
+  <title>GT0.1</title>
 </head>
 
 <body>
@@ -24,24 +24,25 @@
 
   <!-- End Header/Navigation -->
 
-<!-- Start Hero Section -->
-<div class="hero" style="background-color: #000000 ;!important">
-    <div class="container">
-        <div class="row justify-content-between">
-            <div class="col-lg-5">
-                <div class="intro-excerpt">
-                    <h1>À propos de nous</h1>
-                </div>
-            </div>
-            <div class="col-lg-7">
-                <div class="hero-img-wrap">
-                    <img src="images/.png" class="img-fluid" width="37%%" style="top: -117px !important;">
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- End Hero Section -->
+	<!-- Start Hero Section -->
+    <div class="hero" style="background-color: #181818 ;!important">
+				<div class="container">
+					<div class="row justify-content-between">
+						<div class="col-lg-5">
+							<div class="intro-excerpt">
+								<h1>"À propos de nous"</h1>
+							</div>
+						</div>
+						<div class="col-lg-7">
+						    <div class="hero-img-wrap">
+								<img src="images/men.png" class="img-fluid" width="37%%" style="top: -117px !important;">
+							</div>
+							
+						</div>
+					</div>
+				</div>
+			</div>
+		<!-- End Hero Section -->
 
 <!-- Start Module Section -->
 <div class="untree_co-section module-section before-footer-section" style="background-color: #f8f9fa;">

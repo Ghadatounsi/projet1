@@ -167,6 +167,21 @@
     </div>
 </li>
 
+<li class="nav-item">
+    <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseteen"
+        aria-expanded="true" aria-controls="collapseteen">
+        <i class="fa fa-star" aria-hidden="true"></i>
+        <span>Agent</span>
+    </a>
+    <div id="collapseteen" class="collapse" aria-labelledby="headingSeven" data-parent="#accordionSidebar">
+        <div class="bg-white py-2 collapse-inner rounded">
+            <h6 class="collapse-header">Gestion Agent</h6>
+            <a class="collapse-item" href="http://localhost/projet1/dashboard/Gestion_agent/ajouter_agent.php?id=<?php echo $_SESSION['user_id']; ?>">Ajouter Agent</a>
+            <a class="collapse-item" href="http://localhost/projet1/dashboard/Gestion_agent/liste_agent.php?id=<?php echo $_SESSION['user_id']; ?>">Liste Des Agent</a>
+
+        </div>
+    </div>
+</li>
 
 
 

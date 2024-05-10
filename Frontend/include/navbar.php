@@ -12,7 +12,7 @@
                 </li>
                 <li><a class="nav-link" href="http://localhost/projet1/Frontend/formations.php?id=<?php echo isset($_SESSION['user_id']) ? $_SESSION['user_id'] : '' ?>">Formations</a></li>
                 <li><a class="nav-link" href="http://localhost/projet1/Frontend/about.php?id=<?php echo isset($_SESSION['user_id']) ? $_SESSION['user_id'] : '' ?>">À propos de nous</a></li>
-                <li><a class="nav-link" href="http://localhost/projet1/Frontend/actualite.php?id=<?php echo isset($_SESSION['user_id']) ? $_SESSION['user_id'] : '' ?>">Actualité</a></li>
+                <li><a class="nav-link" href="http://localhost/projet1/Frontend/actualite.php?id=<?php echo isset($_SESSION['user_id']) ? $_SESSION['user_id'] : '' ?>">Actualités</a></li>
                 <li><a class="nav-link" href="http://localhost/projet1/Frontend/contact.php?id=<?php echo isset($_SESSION['user_id']) ? $_SESSION['user_id'] : '' ?>">Contactez nous</a></li>
             </ul>
 
