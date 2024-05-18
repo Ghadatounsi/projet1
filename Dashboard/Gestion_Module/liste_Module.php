@@ -91,10 +91,8 @@ if(isset($_SESSION['user_id'])) {
                                     echo "<td>" . $row["titre"] . "</td>";
                                     echo "<td>" . $row["discription"] . "</td>";
                                     echo "<td>";
-                                    echo "<form action='modifier_module.php?id=" . $row['id'] . "' method='post'>";
-                                    echo "<input type='hidden' name='module_id' value='" . $row['id'] . "'>";
-                                    echo "<button type='submit' class='btn btn-primary'><i class='fas fa-pencil-alt'></i> Modifier</button>";
-                                    echo "</form>";
+                                    echo "<a href='modifier_module.php?admin_id=" . $_SESSION['user_id'] . "&id=" . $row['id'] . "'>Modifier</a>";
+                                    
                                     echo "<form action='../Controller/supprimer_module.php' method='post'>";
                                     echo "<input type='hidden' name='supprimer_module' value='1'>";
                                     echo "<input type='hidden' name='module_id' value='" . $row['id'] . "'>";

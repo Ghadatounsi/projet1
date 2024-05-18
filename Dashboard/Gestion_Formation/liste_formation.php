@@ -1,11 +1,9 @@
 <?php
-// Démarrer la session
-session_start();
+session_start(); // Démarrez la session si ce n'est pas déjà fait
 
-// Vérifier si l'utilisateur est connecté
+// Vérifiez si l'utilisateur est connecté et si oui, récupérez son ID de session
 if(isset($_SESSION['user_id'])) {
-    // Récupérer l'ID de l'utilisateur depuis la session
-    $userId = $_SESSION['user_id'];
+    $session_id = $_SESSION['user_id'];
 } else {
     // L'utilisateur n'est pas connecté, rediriger vers la page de connexion
     header("Location: http://localhost/projet1/Frontend/index.php");
@@ -105,11 +103,8 @@ if(isset($_SESSION['user_id'])) {
                 echo "<td><img src='../upload/".$row["image"]."' style='max-width: 100px;'></td>";
                 echo "<td>";
 
-                echo "<form action='modifier_formation.php?id=" . $row['id'] . "' method='post'>";
-                echo "<input type='hidden' name='formation_id' value='" . $row['id'] . "'>";
-                echo "<button type='submit' class='btn btn-primary'><i class='fa fa-pencil' aria-hidden='true'></i>
-                Modifier</button>";
-                echo "</form>";
+                echo "<a href='modifier_formation.php?admin_id=" . $_SESSION['user_id'] . "&id=" . $row['id'] . "'>Modifier</a>";
+               
                 echo "<form action='../Controller/supprimer_formation.php' method='post'>";
                 echo "<input type='hidden' name='supprimer_formation' value='1'>";
                 echo "<input type='hidden' name='formation_id' value='" . $row['id'] . "'>";

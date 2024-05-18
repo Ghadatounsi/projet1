@@ -13,89 +13,102 @@ if(isset($_SESSION['user_id'])) {
 }
 ?>
 
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
+  <title>GT 0.1</title>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="author" content="Untree.co">
-  <link rel="shortcut icon" href="favicon.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <link href="css/style.css" rel="stylesheet">
 
-  <meta name="description" content="" />
-  <meta name="keywords" content="bootstrap, bootstrap4" />
+    <!-- Liens Bootstrap 5 JS et dépendances -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
 
-		<!-- Bootstrap CSS -->
-		<link href="css/bootstrap.min.css" rel="stylesheet">
-		<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
-		<link href="css/tiny-slider.css" rel="stylesheet">
-		<link href="css/style.css" rel="stylesheet">
-		<title>GT0.1 </title>
-	</head>
+    <!-- Intro settings -->
+    <style>
+    /* Default height for small devices */
+    #intro-example {
+      height: 400px;
+    }
 
-	<body>
+    /* Height for devices larger than 992px */
+    @media (min-width: 992px) {
+      #intro-example {
+        height: 600px;
+      }
+    }
+        /* Style personnalisé pour les cartes avec arrière-plan rouge et texte noir */
+        .red-card {
+            background-color: #6f121d;
+            color: black; /* Texte en noir */
+            border-radius: 10px; /* Ajouter des coins arrondis pour une apparence esthétique */
+            padding: 20px; /* Ajouter un espace à l'intérieur de la carte */
+        }
+  </style>
+</head>
+<body>
+<div
+    id="intro-example"
+    class="p-5 text-center bg-image"
+    style="background-image: url('images/img2.jpg'); "
+  >
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">GT 0.1</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="http://localhost/projet1/Frontend/index.php?id=<?php echo isset($_SESSION['user_id']) ? $_SESSION['user_id'] : '' ?>">Home</a></li>
+      <li><a href="http://localhost/projet1/Frontend/formations.php?id=<?php echo isset($_SESSION['user_id']) ? $_SESSION['user_id'] : '' ?>">Formations</a></li>
+      <li><a href="http://localhost/projet1/Frontend/actualite.php?id=<?php echo isset($_SESSION['user_id']) ? $_SESSION['user_id'] : '' ?>">Actualite</a></li>
 
-		<!-- Start Header/Navigation -->
-        <?php include("include/navbar.php") ?>
-		<!-- End Header/Navigation -->
+      <li><a href="http://localhost/projet1/Frontend/contact.php?id=<?php echo isset($_SESSION['user_id']) ? $_SESSION['user_id'] : '' ?>">Contact-Nous</a></li>
 
-		<!-- Start Hero Section -->
-			<div class="hero" style="background-color: #181818 ;!important">
-				<div class="container">
-					<div class="row justify-content-between">
-						<div class="col-lg-5">
-							<div class="intro-excerpt">
-								<h1> "Explorez nos Formations Modernes"<span clsas="d-block"></span></h1>
-								<p class="mb-4">Découvrez nos programmes modernes et enrichissants conçus pour stimuler votre créativité et développer vos compétences</p>
-								<p><a href="" class="btn btn-secondary me-2">S'inscrire maintenant</a><a href="#" class="btn btn-white-outline">Découvrir</a></p>
-							</div>
-						</div>
-						<div class="col-lg-7">
-							<div class="hero-img-wrap">
-								<img src="images/men.png" class="img-fluid" width="55%">
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		<!-- End Hero Section -->
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+      <li><a href="http://localhost/projet1/Frontend/logout.php"><span class="glyphicon glyphicon-log-out"></span></a></li>
+    </ul>
+  </div>
+</nav>
+  
+ <!-- Background image -->
+ 
+        <div class="intro-excerpt" style="margin: 14%;">
+	     	<h1 style="color: white;"> "Explorez nos Formations Modernes"<span clsas="d-block"></span></h1>
+		  	<p style="color: white;">Découvrez nos programmes modernes et enrichissants conçus pour stimuler votre créativité et développer vos compétences</p>
+			<p>
+            <a href="http://localhost/projet1/Frontend/login.php?id=<?php echo isset($_SESSION['user_id']) ? $_SESSION['user_id'] : '' ?>" ><button type="button" class="btn btn-dark" style="color: dark;">S'inscrire maintenant</button></a>
 
-		<!-- Start Product Section -->
-		<?php include("include/product_section.php") ?>
-		<!-- End Product Section -->
+            <a href="#" ><button type="button" class="btn btn-dark" style="color: dark;">Découvrir</button></a>
 
-		<!-- Start Why Choose Us Section -->
-		<?php include("include/why_choose_section.php") ?>
+        </p>
+	    </div>
+    </div>
+  <!-- Background image -->
 
-		<!-- End Why Choose Us Section -->
+  <?php include("include/product_section.php") ?>
+  <?php include("include/blog.php") ?>
 
-		<!-- Start We Help Section -->
-		<?php include("include/we_help_section.php") ?>
+  <?php include("include/teams.php") ?>
+  <?php include("include/avis.php") ?>
+  <?php include("include/listeavis.php") ?>
 
-		<!-- End We Help Section -->
+	<!-- Start Why Choose Us Section -->
+  
 
-		<!-- Start Popular Product -->
-		<?php include("include/popular_product.php") ?>
->
-		<!-- End Popular Product -->
-
-		<!-- Start Testimonial Slider -->
-		<?php include("include/testimonial_section.php") ?>
-
-		<!-- End Testimonial Slider -->
-
-		<!-- Start Blog Section -->
-		<?php include("include/blog_section.php") ?>
-
-		<!-- End Blog Section -->	
-
-		<!-- Start Footer Section -->
-		<?php include("include/footer.php") ?>
-		<!-- End Footer Section -->	
+<!-- Start Footer Section -->
+<?php include("include/footer.php") ?>
 
 
-		<script src="js/bootstrap.bundle.min.js"></script>
-		<script src="js/tiny-slider.js"></script>
-		<script src="js/custom.js"></script>
-	</body>
 
+
+
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+
+</body>
 </html>

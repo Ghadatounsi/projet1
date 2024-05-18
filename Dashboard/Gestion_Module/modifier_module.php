@@ -1,28 +1,48 @@
 <?php
-// Démarrer la session
+// Démarrer la session si ce n'est pas déjà fait
 session_start();
 
-// Vérifier si l'utilisateur est connecté
+// Vérifier si l'utilisateur est connecté et si oui, récupérer son ID de session
 if(isset($_SESSION['user_id'])) {
-    // Récupérer l'ID de l'utilisateur depuis la session
-    $userId = $_SESSION['user_id'];
+    $session_id = $_SESSION['user_id'];
 } else {
     // L'utilisateur n'est pas connecté, rediriger vers la page de connexion
     header("Location: http://localhost/projet1/Frontend/index.php");
     exit(); // Terminer le script
 }
-?>
-<?php
+
 // Inclure le contrôleur
 include("../include/connect.php");
 require_once '../Controller/modifier_module.php';
-$id= $_GET['id'];
 
-// Instancier le modèle
+// Récupérer l'identifiant de la formation à modifier depuis l'URL
+$id = $_GET['id'];
+
+// Instancier le modèle pour obtenir les détails de la formation
 $moduleModel = new ModuleModel();
-$module = $moduleModel->getModuleById($id); // Supposons que vous ayez une méthode getFormationById() dans votre modèle
+$module = $moduleModel->getModuleById($id);
 
+// Vérifier si la formation existe
+if($module) {
+    // Vérifier si le formulaire a été soumis
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        // Récupérer les données du formulaire
+        $titre = $_POST["titre"];
+        $description = $_POST["description"];
+      
 
+        // Mettre à jour la formation dans la base de données
+        $controller->updateFormation($id, $titre, $description);
+
+        // Rediriger vers la liste des formations après la mise à jour
+        header("Location: liste_module.php?session_id=" . $session_id);
+        exit();
+    }
+} else {
+    // Gérer le cas où la formation n'existe pas
+    echo "La formation que vous essayez de modifier n'existe pas.";
+    exit();
+}
 ?>
 
 <!DOCTYPE html>

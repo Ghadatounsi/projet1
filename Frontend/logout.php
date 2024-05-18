@@ -7,7 +7,7 @@ if(isset($_SESSION['user_id'])) {
     session_destroy();
 
     // Rediriger vers la page de connexion
-    header("Location: http://localhost/projet1/Frontend/login.php");
+    header("Location: http://localhost/projet1/Frontend/index.php");
     exit(); // Terminer le script
 }
 ?>

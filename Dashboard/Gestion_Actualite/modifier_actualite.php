@@ -1,21 +1,58 @@
 <?php
-// Inclure le contrôleur
+// Démarrer la session si ce n'est pas déjà fait
+session_start();
+
+// Vérifier si l'utilisateur est connecté et si oui, récupérer son ID de session
+if (!isset($_SESSION['user_id'])) {
+    // L'utilisateur n'est pas connecté, rediriger vers la page de connexion
+    header("Location: http://localhost/projet1/Frontend/index.php");
+    exit(); // Terminer le script
+}
+
+// Inclure les fichiers nécessaires
 include("../include/connect.php");
 require_once '../Controller/modifier_actualite.php';
-$id= $_GET['id'];
+require_once '../Model/modelact.php';
 
-// Instancier le modèle
+// Récupérer l'identifiant de l'actualité à modifier depuis l'URL
+if (isset($_GET['id'])) {
+    $id = $_GET['id'];
+} else {
+    echo "ID de l'actualité manquant.";
+    exit();
+}
+
+// Instancier le modèle pour obtenir les détails de l'actualité
 $actualiteModel = new ActualiteModel();
-$actualite = $actualiteModel->getActualiteById($id); // Supposons que vous ayez une méthode getActualiteById() dans votre modèle
+$actualite = $actualiteModel->getActualiteById($id);
 
+// Vérifier si l'actualité existe
+if ($actualite) {
+    // Vérifier si le formulaire a été soumis
+    if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['modifier_actualite'])) {
+        // Récupérer les données du formulaire
+        $titre = $_POST["titre"];
+        $contenu = $_POST["contenu"];
+        $date = date('Y-m-d', strtotime($_POST["date"])); // Conversion de la date
 
+        // Mettre à jour l'actualité dans la base de données
+        $actualiteModel->updateActualite($id, $titre, $contenu, $date);
+
+        // Rediriger vers la liste des actualités après la mise à jour
+        header("Location: ../Gestion_Actualite/liste_actualite.php?admin_id=" . $_SESSION['user_id'] . "&id=" . $row['id']);
+        exit();
+    }
+} else {
+    // Gérer le cas où l'actualité n'existe pas
+    echo "L'actualité que vous essayez de modifier n'existe pas.";
+    exit();
+}
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 
 <head>
-
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -26,13 +63,11 @@ $actualite = $actualiteModel->getActualiteById($id); // Supposons que vous ayez 
 
     <!-- Custom fonts for this template-->
     <link href="../vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
 
     <!-- Custom styles for this template-->
     <link href="../css/sb-admin-2.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-
 </head>
 
 <body id="page-top">
@@ -40,8 +75,7 @@ $actualite = $actualiteModel->getActualiteById($id); // Supposons que vous ayez 
     <!-- Page Wrapper -->
     <div id="wrapper">
 
-        <?php include("../include/navbar.php") ?>
-
+        <?php include("../include/navbar.php"); ?>
 
         <!-- Content Wrapper -->
         <div id="content-wrapper" class="d-flex flex-column">
@@ -50,35 +84,30 @@ $actualite = $actualiteModel->getActualiteById($id); // Supposons que vous ayez 
             <div id="content">
                 <?php include("../include/header.php"); ?>
 
-
                 <!-- Begin Page Content -->
-                <form style="padding-left:5%;padding-right:5%" method="POST" action="../Ajouter_image4/modifier_actualite.php">
-                    <div class="row mb-4">
+                <form style="padding-left:5%;padding-right:5%" method="POST" action="">
                     <input type="hidden" name="id" value="<?php echo $id; ?>">
 
+                    <div class="row mb-4">
                         <div class="col">
-                            <div data-mdb-input-init class="form-outline">
+                            <div class="form-outline">
                                 <label class="form-label" for="form6Example1">Titre</label>
-                                <input type="text" name="titre" id="form6Example1" class="form-control" value="<?php echo $actualite['titre']; ?>" />
+                                <input type="text" name="titre" id="form6Example1" class="form-control" value="<?php echo htmlspecialchars($actualite['titre']); ?>" />
                             </div>
                         </div>
-                        
                     </div>
 
-                    <!-- Text input -->
-                    <div data-mdb-input-init class="form-outline mb-4">
+                    <div class="form-outline mb-4">
                         <label class="form-label" for="form6Example3">Contenu</label>
-                        <input type="text" name="contenu" id="form6Example3" class="form-control" value="<?php echo $actualite['contenu']; ?>" />
+                        <input type="text" name="contenu" id="form6Example3" class="form-control" value="<?php echo htmlspecialchars($actualite['contenu']); ?>" />
                     </div>
 
-                    <!-- Message input -->
                     <label class="form-label" for="form6Example4">Date </label>
-                    <div data-mdb-input-init class="form-outline mb-4">
-                        <input type="date" name="date" id="form6Example4" class="form-control" value="<?php echo $actualite['date']; ?>" />
+                    <div class="form-outline mb-4">
+                        <input type="date" name="date" id="form6Example4" class="form-control" value="<?php echo htmlspecialchars($actualite['date']); ?>" />
                     </div>
 
-                    <!-- Submit button -->
-                    <button data-mdb-ripple-init type="submit" name="modifier_actualite" class="btn btn-primary btn-block mb-4">Modifier</button>
+                    <button type="submit" name="modifier_actualite" class="btn btn-primary btn-block mb-4">Modifier</button>
                 </form>
 
                 <div class="container-fluid">
@@ -108,8 +137,7 @@ $actualite = $actualiteModel->getActualiteById($id); // Supposons que vous ayez 
         </a>
 
         <!-- Logout Modal-->
-        <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-            aria-hidden="true">
+        <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
@@ -132,4 +160,10 @@ $actualite = $actualiteModel->getActualiteById($id); // Supposons que vous ayez 
         <script src="../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
         <!-- Core plugin JavaScript-->
-        <script src="../vendor 
+        <script src="../vendor/jquery-easing/jquery.easing.min.js"></script>
+
+        <!-- Custom scripts for all pages-->
+        <script src="../js/sb-admin-2.min.js"></script>
+    </div>
+</body>
+</html>

@@ -33,7 +33,7 @@ $date_inscription = date("Y-m-d");
 $result = $inscriptionModel->create_inscription($id_candidat, $username_candidat, $email_candidat, $id_formation, $titre_formation, $duree_formation,$prix_formation,$statut,$date_inscription);
 
 if ($result) {
-    header('Location: http://localhost/projet1/Frontend/inscription.php');
+    header("Location: http://localhost/projet1/Frontend/index2.php");
 } else {
     echo "Erreur lors de l'inscription";
 }

@@ -77,10 +77,8 @@ if(isset($_SESSION['user_id'])) {
                                     echo "<td><img src='../upload/".$row["image"]."' style='max-width: 100px;'></td>";
 
                                     echo "<td>";
-                                    echo "<form action='modifier_Actualite.php?id=" . $row['id'] . "' method='post'>";
-                                    echo "<input type='hidden' name='actualite_id' value='" . $row['id'] . "'>";
-                                    echo "<button type='submit' class='btn btn-primary'><i class='fa fa-pencil' aria-hidden='true'></i> Modifier</button>";
-                                    echo "</form>";
+                                    echo "<a href='modifier_actualite.php?admin_id=" . $_SESSION['user_id'] . "&id=" . $row['id'] . "'>Modifier</a>";
+                                   
                 echo "<form action='../Controller/supprimer_Actualite.php' method='post'>";
                 echo "<input type='hidden' name='supprimer_actualite' value='1'>";
                 echo "<input type='hidden' name='actualite_id' value='" . $row['id'] . "'>";

@@ -100,6 +100,7 @@ $result = $conn->query($sql);
                                     echo "<td>" . $row["motdepasse"] . "</td>";
                                     echo "<td><img src='../upload/".$row["image"]."' style='max-width: 100px;'></td>";
                                     echo "<td>";
+                                    echo "<a href='modifier_utilisateur.php?admin_id=" . $_SESSION['user_id'] . "&id=" . $row['id'] . "'>Modifier</a>";
                                     echo "<form action='http://localhost/projet1/dashboard/Gestion_Utilisateur/modifier_utilisateur.php?id=" . $row['id'] . "' method='post'>";
                                     echo "<input type='hidden' name='utilisateur_id' value='" . $row['id'] . "'>";
                                     echo "<button type='submit' class='btn btn-primary'><i class='fa fa-pencil' aria-hidden='true'></i> Modifier</button>";

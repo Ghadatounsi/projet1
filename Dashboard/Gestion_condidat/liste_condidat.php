@@ -90,10 +90,8 @@ if(isset($_SESSION['user_id'])) {
                                     echo "<td>" . $row["username"] . "</td>";
                                     echo "<td>" . $row["email"] . "</td>";
                                     echo "<td>";
-                                    echo "<form action='modifier_candidat.php?id=" . $row['id'] . "' method='post'>";
-                                    echo "<input type='hidden' name='candidat_id' value='" . $row['id'] . "'>";
-                                    echo "<button type='submit' class='btn btn-primary'><i class='fa fa-pencil' aria-hidden='true'></i> Modifier</button>";
-                                    echo "</form>";
+                                    echo "<a href='modifier_condidat.php?admin_id=" . $_SESSION['user_id'] . "&id=" . $row['id'] . "'>Modifier</a>";
+
                                     echo "<form action='../Controller/supprimer_candidat.php' method='post'>";
                                     echo "<input type='hidden' name='supprimer_candidat' value='1'>";
                                     echo "<input type='hidden' name='candidat_id' value='" . $row['id'] . "'>";

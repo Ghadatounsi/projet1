@@ -98,7 +98,7 @@ if(isset($_SESSION['user_id'])) {
                                             echo "<td>" . $row["biographe"] . "</td>";
                                             echo "<td><img src='../upload/".$row["image"]."' style='max-width: 100px;'></td>";
                                             echo "<td>";
-                                
+                                            echo "<a href='modifier_formateur.php?admin_id=" . $_SESSION['user_id'] . "&id=" . $row['id'] . "'>Modifier</a>";
                                             echo "<form action='modifier_formateur.php?id=" . $row['id'] . "' method='post'>";
                                             echo "<input type='hidden' name='formateur_id' value='" . $row['id'] . "'>";
                                             echo "<button type='submit' class='btn btn-primary'><i class='fa fa-pencil' aria-hidden='true'></i> 

@@ -23,11 +23,36 @@ if(isset($_SESSION['user_id'])) {
   <meta name="description" content="" />
   <meta name="keywords" content="bootstrap, bootstrap4" />
 
-		<!-- Bootstrap CSS -->
-		<link href="css/bootstrap.min.css" rel="stylesheet">
-		<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
-		<link href="css/tiny-slider.css" rel="stylesheet">
-		<link href="css/style.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <link href="css/style.css" rel="stylesheet">
+
+    <!-- Liens Bootstrap 5 JS et dépendances -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+
+    <!-- Intro settings -->
+    <style>
+    /* Default height for small devices */
+    #intro-example {
+      height: 400px;
+    }
+
+    /* Height for devices larger than 992px */
+    @media (min-width: 992px) {
+      #intro-example {
+        height: 600px;
+      }
+    }
+        /* Style personnalisé pour les cartes avec arrière-plan rouge et texte noir */
+        .red-card {
+            background-color: #6f121d;
+            color: black; /* Texte en noir */
+            border-radius: 10px; /* Ajouter des coins arrondis pour une apparence esthétique */
+            padding: 20px; /* Ajouter un espace à l'intérieur de la carte */
+        }
+  </style>
 		<title>GT0.1</title>
 	</head>
 
@@ -37,24 +62,7 @@ if(isset($_SESSION['user_id'])) {
 		<?php include("include/navbar.php") ?>
 		<!-- End Header/Navigation -->
 	<!-- Start Hero Section -->
-    <div class="hero" style="background-color: #181818 ;!important">
-				<div class="container">
-					<div class="row justify-content-between">
-						<div class="col-lg-5">
-							<div class="intro-excerpt">
-								<h1>"Nos Actualités"</h1>
-							</div>
-						</div>
-						<div class="col-lg-7">
-						    <div class="hero-img-wrap">
-								<img src="images/men.png" class="img-fluid" width="37%%" style="top: -117px !important;">
-							</div>
-							
-						</div>
-					</div>
-				</div>
-			</div>
-		<!-- End Hero Section -->
+				
 
 		<?php
 include("../Dashboard/include/connect.php");

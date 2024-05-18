@@ -24,12 +24,37 @@ if(isset($_SESSION['user_id'])) {
   <meta name="keywords" content="bootstrap, bootstrap4" />
 
 		<!-- Bootstrap CSS -->
-		<link href="css/bootstrap.min.css" rel="stylesheet">
-		<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
-		<link href="css/tiny-slider.css" rel="stylesheet">
-		<link href="css/style.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <link href="css/style.css" rel="stylesheet">
+
+    <!-- Liens Bootstrap 5 JS et dépendances -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
 		<title>GT0.1 </title>
-	</head>
+	
+        <style>
+    /* Default height for small devices */
+    #intro-example {
+      height: 400px;
+    }
+
+    /* Height for devices larger than 992px */
+    @media (min-width: 992px) {
+      #intro-example {
+        height: 600px;
+      }
+    }
+        /* Style personnalisé pour les cartes avec arrière-plan rouge et texte noir */
+        .red-card {
+            background-color: #6f121d;
+            color: black; /* Texte en noir */
+            border-radius: 10px; /* Ajouter des coins arrondis pour une apparence esthétique */
+            padding: 20px; /* Ajouter un espace à l'intérieur de la carte */
+        }
+  </style>
+    </head>
 
 	<body>
 
@@ -39,59 +64,49 @@ if(isset($_SESSION['user_id'])) {
 		<!-- End Header/Navigation -->
 
 		<!-- Start Hero Section -->
-			<div class="hero" style="background-color: #181818 ;!important">
-				<div class="container">
-					<div class="row justify-content-between">
-						<div class="col-lg-5">
-							<div class="intro-excerpt">
-								<h1>"Nos Formations"</h1>
-							</div>
-						</div>
-						<div class="col-lg-7">
-						    <div class="hero-img-wrap">
-								<img src="images/men.png" class="img-fluid" width="37%%" style="top: -117px !important;">
-							</div>
-							
-						</div>
-					</div>
-				</div>
-			</div>
+			
 		<!-- End Hero Section -->
 
 		
-<?php
+        <?php
 include("../Dashboard/include/connect.php");
+
 // Requête SQL pour récupérer les données de la table "formation"
 $sql = "SELECT * FROM formation";
 $result = $conn->query($sql);
 ?>
 
-
-<div class="untree_co-section product-section before-footer-section">
-    <div class="container">
-        <div class="row">
+<div class="container bootstrap snippets bootdey">
+    <hr>
+    <div class="row content">
+        <div class="col-lg-10 col-lg-offset-1">
             <?php
+            // Compteur pour limiter à trois cartes
+            $counter = 0;
+            
             // Vérifier s'il y a des résultats
             if ($result->num_rows > 0) {
-                // Afficher les données de chaque ligne
+                // Afficher les données de chaque ligne jusqu'à trois cartes
                 while ($row = $result->fetch_assoc()) {
-                    ?>
-                    <div class="col-12 col-md-4 col-lg-3 mb-5">
-                        <a class="product-item" href="#">
-                            <img src="http://localhost/projet1/dashboard/upload/<?php echo $row["image"]; ?>" class="img-fluid product-thumbnail">
-                            <h3 class="product-title"><?php echo $row["titre"]; ?></h3>
-                            <strong class="product-price"><?php echo $row["prix"]; ?></strong>
-
-                            <span class="icon-cross">
-                                <img src="http://localhost/projet1/dashboard/upload/<?php echo $row["image"]; ?>" class="img-fluid">
-                            </span>
-                        </a>
+                    
+            ?>
+                    <div class="col-sm-4 text-center">
+                        <div class="plan red-card"> <!-- Ajoutez la classe personnalisée red-card -->
+						<img src="http://localhost/projet1/dashboard/upload/<?php echo $row["image"]; ?>" class="card-img-top" alt="..." style="width: 200px; height: 150px; object-fit: cover;">
+                            <h2 class=" text-white" style="color: white;"><?php echo $row["titre"]; ?></h2> <!-- Ajoutez la classe text-white -->
+                            <p class="gold-text price text-white" style="color: white;"><?php echo $row["prix"]; ?></p> <!-- Ajoutez la classe text-white -->
+                            <p class="text-white" style="color: white;"><?php echo $row["description"]; ?></p> <!-- Ajoutez la classe text-white -->
+                            <a href="http://localhost/projet1/Frontend/inscription.php?id=<?php echo $_SESSION['user_id']; ?>"><button type="button" class="btn btn-dark" style="color: dark;">Inscription</button></a>
+                        </div>
                     </div>
             <?php
+                    $counter++;
                 }
             } else {
                 echo "Aucun résultat trouvé";
             }
+            // Fermer le résultat de la requête
+            $result->close();
             ?>
         </div>
     </div>
@@ -101,6 +116,7 @@ $result = $conn->query($sql);
 // Fermer la connexion à la base de données
 $conn->close();
 ?>
+
 
 
 
