@@ -9,12 +9,12 @@
       <a class="navbar-brand" href="#">GT 0.1</a>
     </div>
     <ul class="nav navbar-nav">
-      <li class="active"><a href="http://localhost/projet1/Frontend/index.php?id=<?php echo isset($_SESSION['user_id']) ? $_SESSION['user_id'] : '' ?>">Home</a></li>
+      <li class="active"><a href="http://localhost/projet1/Frontend/index.php?id=<?php echo isset($_SESSION['user_id']) ? $_SESSION['user_id'] : '' ?>">Accueil</a></li>
       <li><a href="http://localhost/projet1/Frontend/formations.php?id=<?php echo isset($_SESSION['user_id']) ? $_SESSION['user_id'] : '' ?>">Formations</a></li>
-      <li><a href="http://localhost/projet1/Frontend/actualite.php?id=<?php echo isset($_SESSION['user_id']) ? $_SESSION['user_id'] : '' ?>">Actualite</a></li>
-      <li><a href="http://localhost/projet1/Frontend/about.php?id=<?php echo isset($_SESSION['user_id']) ? $_SESSION['user_id'] : '' ?>">A propos</a></li>
+      <li><a href="http://localhost/projet1/Frontend/actualite.php?id=<?php echo isset($_SESSION['user_id']) ? $_SESSION['user_id'] : '' ?>">Actualités</a></li>
+      <li><a href="http://localhost/projet1/Frontend/about.php?id=<?php echo isset($_SESSION['user_id']) ? $_SESSION['user_id'] : '' ?>">A propos de nous</a></li>
 
-      <li><a href="http://localhost/projet1/Frontend/contact.php?id=<?php echo isset($_SESSION['user_id']) ? $_SESSION['user_id'] : '' ?>">Contact-Nous</a></li>
+      <li><a href="http://localhost/projet1/Frontend/contact.php?id=<?php echo isset($_SESSION['user_id']) ? $_SESSION['user_id'] : '' ?>">Contactes-Nous</a></li>
 
     </ul>
     <ul class="nav navbar-nav navbar-right">

@@ -85,7 +85,7 @@ $result = $conn->query($sql);
                             <div class="product-card" style="border-radius: 10px; overflow: hidden; box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);">
                                 <img src="http://localhost/projet1/dashboard/upload/<?php echo $row["image"]; ?>" class="img-fluid product-thumbnail" style="object-fit: cover; height: 200px; width: 100%;">
                                 <div class="product-info p-3">
-                                    <h3 class="product-title mb-0" style="font-size: 18px;"><?php echo $row["titre"]; ?></h3>
+                                    <h2 class=" text-white" style="color: white;"><?php echo $row["titre"]; ?></h2>
                                     <p class="mb-2" style="font-size: 14px;"><?php echo $row["contenu"]; ?></p>
                                     <div class="meta">
                                         <span style="font-size: 12px;">Date: <?php echo $row["date"]; ?></span>

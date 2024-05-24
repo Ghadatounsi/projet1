@@ -3,7 +3,7 @@
 session_start();
 
 // Vérifier si l'utilisateur est connecté
-if(!isset($_SESSION['user_id'])) {
+if (!isset($_SESSION['user_id'])) {
     // L'utilisateur n'est pas connecté, rediriger vers la page de connexion
     header("Location: http://localhost/projet1/Frontend/index.php");
     exit(); // Terminer le script
@@ -14,16 +14,19 @@ include("../include/connect.php");
 
 // Pagination
 $limit = 10; // Nombre de candidats par page
-$page = isset($_GET['page']) ? $_GET['page'] : 1;
+$page = isset($_GET['page']) ? (int)$_GET['page'] : 1;
 $start = ($page - 1) * $limit;
 
 // Requête SQL pour sélectionner les candidats avec pagination
-$sql = "SELECT * FROM inscription LIMIT $start, $limit";
-$result = $conn->query($sql);
+$sql = "SELECT * FROM inscription LIMIT ?, ?";
+$stmt = $conn->prepare($sql);
+$stmt->bind_param("ii", $start, $limit);
+$stmt->execute();
+$result = $stmt->get_result();
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 
 <head>
     <meta charset="utf-8">
@@ -31,7 +34,7 @@ $result = $conn->query($sql);
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-    <title>INIR - Liste des Inscriptions </title>
+    <title>INIR - Liste des Inscriptions</title>
 
     <!-- Custom fonts for this template -->
     <link href="../vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -50,7 +53,7 @@ $result = $conn->query($sql);
     <div id="wrapper">
 
         <!-- Sidebar -->
-        <?php include("../include/navbar.php") ?>
+        <?php include("../include/navbar.php"); ?>
         <!-- End of Sidebar -->
 
         <!-- Content Wrapper -->
@@ -60,7 +63,7 @@ $result = $conn->query($sql);
             <div id="content">
 
                 <!-- Topbar -->
-                <?php include("../include/header.php") ; ?>
+                <?php include("../include/header.php"); ?>
                 <!-- End of Topbar -->
 
                 <!-- Begin Page Content -->
@@ -74,60 +77,53 @@ $result = $conn->query($sql);
                         <thead>
                             <tr>
                                 <th scope="col">ID</th>
-                                <th scope="col">titre_formation</th>
-                                <th scope="col">duree_formation</th>
-                                <th scope="col">username_candidat</th>
-                                <th scope="col">email_candidat</th>
+                                <th scope="col">Titre Formation</th>
+                                <th scope="col">Durée Formation</th>
+                                <th scope="col">Nom Candidat</th>
+                                <th scope="col">Email Candidat</th>
                                 <th scope="col">Actions</th>
                             </tr>
                         </thead>
                         <tbody class="table-group-divider table-divider-color">
-                            <?php
-                            if ($result->num_rows > 0) {
-                                // Afficher les données de chaque candidat
-                                while ($row = $result->fetch_assoc()) {
-                                    echo "<tr>";
-                                    echo "<td>" . $row["id"] . "</td>";
-                                    echo "<td>" . $row["titre_formation"] . "</td>";
-                                    echo "<td>" . $row["duree_formation"] . "</td>";
-                                    echo "<td>" . $row["username_candidat"] . "</td>";
-                                    echo "<td>" . $row["email_candidat"] . "</td>";
-                                    echo "<td>";
-                                    echo "<a href='modifier_inscription.php?admin_id=" . $_SESSION['user_id'] . "&id=" . $row['id'] . "'>Modifier</a>";
-                                    echo "<form action='modifier_candidat.php?id=" . $row['id'] . "' method='post'>";
-                                    echo "<input type='hidden' name='candidat_id' value='" . $row['id'] . "'>";
-                                    echo "<button type='submit' class='btn btn-primary'><i class='fa fa-pencil' aria-hidden='true'></i> Modifier</button>";
-                                    echo "</form>";
-                                    echo "<form action='../Controller/supprimer_candidat.php' method='post'>";
-                                    echo "<input type='hidden' name='supprimer_candidat' value='1'>";
-                                    echo "<input type='hidden' name='candidat_id' value='" . $row['id'] . "'>";
-                                    echo "<button type='submit' class='btn btn-danger'><i class='fa fa-trash' aria-hidden='true'></i> Supprimer</button>";
-                                    echo "</form>";
-                                    echo "</td>";
-                                    echo "</tr>";
-                                }
-                            } else {
-                                echo "<tr><td colspan='8'>Aucun résultat trouvé</td></tr>";
-                            }
-                            ?>
+                            <?php if ($result->num_rows > 0): ?>
+                                <?php while ($row = $result->fetch_assoc()): ?>
+                                    <tr>
+                                        <td><?= htmlspecialchars($row['id']) ?></td>
+                                        <td><?= htmlspecialchars($row['titre_formation']) ?></td>
+                                        <td><?= htmlspecialchars($row['duree_formation']) ?></td>
+                                        <td><?= htmlspecialchars($row['username_candidat']) ?></td>
+                                        <td><?= htmlspecialchars($row['email_candidat']) ?></td>
+                                        <td>
+                                            <a href="modifier_inscription.php?admin_id=<?= $_SESSION['user_id'] ?>&id=<?= $row['id'] ?>" class="btn btn-primary btn-sm"><i class="fa fa-pencil" aria-hidden="true"></i> Modifier</a>
+                                            <form action="../Controller/supprimer_candidat.php" method="post" style="display:inline-block;">
+                                                <input type="hidden" name="candidat_id" value="<?= $row['id'] ?>">
+                                                <button type="submit" class="btn btn-danger btn-sm"><i class="fa fa-trash" aria-hidden="true"></i> Supprimer</button>
+                                            </form>
+                                        </td>
+                                    </tr>
+                                <?php endwhile; ?>
+                            <?php else: ?>
+                                <tr><td colspan="6">Aucun résultat trouvé</td></tr>
+                            <?php endif; ?>
                         </tbody>
                     </table>
 
                     <!-- Pagination -->
                     <?php
-                    // Calculer le nombre total de pages
                     $sql_count = "SELECT COUNT(id) AS total FROM inscription";
                     $result_count = $conn->query($sql_count);
                     $row_count = $result_count->fetch_assoc();
                     $total_pages = ceil($row_count['total'] / $limit);
 
-                    // Afficher les liens de pagination
-                    echo "<ul class='pagination justify-content-center'>";
-                    for ($i = 1; $i <= $total_pages; $i++) {
-                        echo "<li class='page-item'><a class='page-link' href='liste_candidats.php?page=" . $i . "'>" . $i . "</a></li>";
-                    }
-                    echo "</ul>";
-                    ?>
+                    if ($total_pages > 1): ?>
+                        <ul class="pagination justify-content-center">
+                            <?php for ($i = 1; $i <= $total_pages; $i++): ?>
+                                <li class="page-item <?= ($i == $page) ? 'active' : '' ?>">
+                                    <a class="page-link" href="liste_candidats.php?page=<?= $i ?>"><?= $i ?></a>
+                                </li>
+                            <?php endfor; ?>
+                        </ul>
+                    <?php endif; ?>
                     <!-- End Pagination -->
 
                 </div>

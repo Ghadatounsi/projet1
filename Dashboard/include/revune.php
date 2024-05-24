@@ -60,6 +60,16 @@ if ($result_demandes_attente->num_rows > 0) {
 } else {
     $total_demandes_attente = 0;
 }
+// Requête SQL pour récupérer le nombre total de demandes en attente
+$sql_demandes_approuve = "SELECT COUNT(*) AS total_demandes_approuve FROM inscription WHERE statut = 'approuve'";
+$result_demandes_approuve = $conn->query($sql_demandes_approuve);
+
+if ($result_demandes_approuve->num_rows > 0) {
+    $row_demandes_approuve = $result_demandes_approuve->fetch_assoc();
+    $total_demandes_approuve = $row_demandes_approuve["total_demandes_approuve"];
+} else {
+    $total_demandes_approuve = 0;
+}
 
 // Fermer la connexion à la base de données
 $conn->close();
@@ -112,6 +122,23 @@ $conn->close();
                         <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
                             Demandes en attente</div>
                         <div class="h5 mb-0 font-weight-bold text-gray-800"><?php echo $total_demandes_attente; ?></div>
+                    </div>
+                    <div class="col-auto">
+                        <i class="fas fa-comments fa-2x text-gray-300"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+     <!-- Demandes en attente -->
+     <div class="col-xl-3 col-md-6 mb-4">
+        <div class="card border-left-warning shadow h-100 py-2">
+            <div class="card-body">
+                <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                        <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
+                            Demandes en approuve</div>
+                        <div class="h5 mb-0 font-weight-bold text-gray-800"><?php echo $total_demandes_approuve; ?></div>
                     </div>
                     <div class="col-auto">
                         <i class="fas fa-comments fa-2x text-gray-300"></i>

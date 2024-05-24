@@ -28,7 +28,7 @@ $result = $conn->query($sql);
                             <h2 class=" text-white" style="color: white;"><?php echo $row["titre"]; ?></h2> <!-- Ajoutez la classe text-white -->
                             <p class="gold-text price text-white" style="color: white;"><?php echo $row["prix"]; ?></p> <!-- Ajoutez la classe text-white -->
                             <p class="text-white" style="color: white;"><?php echo $row["description"]; ?></p> <!-- Ajoutez la classe text-white -->
-							<a href="http://localhost/projet1/Frontend/login.php" ><button type="button" class="btn btn-dark" style="color: dark;">Inscription</button></a>
+                            <a href="http://localhost/projet1/Frontend/inscription.php?id=<?php echo $_SESSION['user_id']; ?>"><button type="button" class="btn btn-dark" style="color: dark;">Inscription</button></a>
                         </div>
                     </div>
             <?php

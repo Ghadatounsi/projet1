@@ -121,7 +121,7 @@ $formationModel = new FormationModel();
     </div>
 
     <!-- Submit button -->
-    <button data-mdb-ripple-init type="submit" name="ajouter_formation" class="btn btn-primary btn-block mb-4">Place order</button>
+    <button data-mdb-ripple-init type="submit" name="ajouter_formation" class="btn btn-primary btn-block mb-4">Ajouter</button>
 </form>
 
 

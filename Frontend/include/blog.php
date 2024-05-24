@@ -24,7 +24,7 @@ if ($result !== false && $result->num_rows > 0) {
                         <div class="product-card" style="background-color: #6f121d; color: white; border-radius: 10px; overflow: hidden; box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1); height: 100%;">
                             <img src="http://localhost/projet1/dashboard/upload/<?php echo $row['image']; ?>" class="img-fluid product-thumbnail" style="object-fit: cover; height: 250px; width: 100%;">
                             <div class="product-info p-3">
-                                <h3 class="product-title mb-2" style="font-size: 20px;"><?php echo $row['titre']; ?></h3>
+                            <h3 class="product-title mb-2" style="font-size: 20px; color: white;"><?php echo $row['titre']; ?></h3>
                                 <p class="mb-3" style="font-size: 16px; max-height: 100px; overflow: hidden; text-overflow: ellipsis;"><?php echo $row['contenu']; ?></p>
                                 <div class="meta">
                                     <span style="font-size: 14px;">Date: <?php echo $row['date']; ?></span>

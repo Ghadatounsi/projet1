@@ -60,10 +60,11 @@ if(isset($_SESSION['user_id'])) {
 
                     <!-- Page Heading -->
                     <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                        <h1 class="h3 mb-0 text-gray-800">Dashboard</h1>
-                        <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
-                                class="fas fa-download fa-sm text-white-50"></i> Générer un Rapport</a>
-                    </div>
+    <h1 class="h3 mb-0 text-gray-800">Dashboard</h1>
+    <a href="generate_report.php" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
+            class="fas fa-download fa-sm text-white-50"></i> Générer un Rapport</a>
+</div>
+
 
                     <!-- Content Row -->
                     <?php include("include/revune.php") ; ?>
@@ -80,7 +81,46 @@ if(isset($_SESSION['user_id'])) {
 
             </div>
             <!-- End of Main Content -->
+            <!-- Contenu -->
+<div class="container-fluid">
+    <div class="row">
+        <!-- Colonne 1 -->
+        <div class="col-md-6">
+        <?php include("include/selontitre.php") ; ?>
+        </div>
+        
+        <!-- Colonne 2 -->
+        <div class="col-md-6">
+        <?php include("include/tendance.php") ; ?>
+        </div>
+        
+        
+    </div>
+</div>
 
+<div class="container-fluid">
+    <div class="row">
+        <!-- Colonne 1 -->
+        <div class="col-md-4">
+        <?php include("include/regression2.php") ; ?>
+
+        </div>
+        
+        <!-- Colonne 2 -->
+        <div class="col-md-4">
+        <?php include("include/regression_lasso.php") ; ?>
+
+        </div>
+        
+        <!-- Colonne 3 -->
+        <div class="col-md-4">
+            <!-- Contenu ici -->
+            <div class="container-fluid">
+              
+            </div>
+        </div>
+    </div>
+</div>
             <!-- Footer -->
             <footer class="sticky-footer bg-white">
                 <div class="container my-auto">
